@@ -1,0 +1,2423 @@
+stats:
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 2867a634
+      io.kubernetes.container.ports: '[{"hostPort":6080,"containerPort":6080,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "135"
+    id: 02664c7c5fd42d29b66366be438e00e9d1a5b09610c03ad0279103c70517dac4
+    labels:
+      io.kubernetes.container.name: kube-apiserver-insecure-readyz
+      io.kubernetes.pod.name: kube-apiserver-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-apiserver
+      io.kubernetes.pod.uid: 932766fe-9c7e-45b5-9da0-c618a1947dee
+    metadata:
+      attempt: 0
+      name: kube-apiserver-insecure-readyz
+  cpu:
+    timestamp: "1608049185528108243"
+    usageCoreNanoSeconds:
+      value: "572142222"
+  memory:
+    timestamp: "1608049185528108243"
+    workingSetBytes:
+      value: "21180416"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/cdf6ba07c48b1a62a8c2dabd15816462316eae4f3e3fba9d23715ce8a144b515/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185528108243"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: ac7a59c5
+      io.kubernetes.container.ports: '[{"containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 119b0c43997d4423305ced9834e226f97add763c8421bf66343deef735ff8d6e
+    labels:
+      io.kubernetes.container.name: service-ca-controller
+      io.kubernetes.pod.name: service-ca-97df56f9-8x88f
+      io.kubernetes.pod.namespace: openshift-service-ca
+      io.kubernetes.pod.uid: c4d72013-1acd-4c4b-8950-b1d9733d90db
+    metadata:
+      attempt: 0
+      name: service-ca-controller
+  cpu:
+    timestamp: "1608049185485730747"
+    usageCoreNanoSeconds:
+      value: "14536984042"
+  memory:
+    timestamp: "1608049185485730747"
+    workingSetBytes:
+      value: "74182656"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/22dbf6eee0016042d8e8a1d16a348ad842574aff2f2beaec85408fc7e0fa5631/merged
+    inodesUsed:
+      value: "11"
+    timestamp: "1608049185485730747"
+    usedBytes:
+      value: "7206"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: a50ce1be
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 125835615a8d1b2adb2c2085958b21a5381ba40d9d88b3349c7fa558c1666949
+    labels:
+      io.kubernetes.container.name: sdn-controller
+      io.kubernetes.pod.name: sdn-controller-p9ftk
+      io.kubernetes.pod.namespace: openshift-sdn
+      io.kubernetes.pod.uid: 1a59da8c-c365-4354-9c73-cf0b9034fa2b
+    metadata:
+      attempt: 0
+      name: sdn-controller
+  cpu:
+    timestamp: "1608049185516585420"
+    usageCoreNanoSeconds:
+      value: "1128098604"
+  memory:
+    timestamp: "1608049185516585420"
+    workingSetBytes:
+      value: "31498240"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/c1e38951d5446483cc360914c844d5b75099bf221c2e547bceb2ac55569a604d/merged
+    inodesUsed:
+      value: "2"
+    timestamp: "1608049185516585420"
+    usedBytes:
+      value: "23"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 3fe533b0
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 127c89cdc5cb0d3ca0252d549aa1e2d9b1224e292bba85a91d5ba1cb9d2a95fd
+    labels:
+      io.kubernetes.container.name: kube-controller-manager-cert-syncer
+      io.kubernetes.pod.name: kube-controller-manager-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-controller-manager
+      io.kubernetes.pod.uid: ae08185f-7c8b-4326-b8f6-9e40e388b244
+    metadata:
+      attempt: 0
+      name: kube-controller-manager-cert-syncer
+  cpu:
+    timestamp: "1608049185530091383"
+    usageCoreNanoSeconds:
+      value: "5362145088"
+  memory:
+    timestamp: "1608049185530091383"
+    workingSetBytes:
+      value: "36442112"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/ff0fff13e93ccfdaca086a2a2a4ddc64825a5f7f97fafd5422253b685bb68e87/merged
+    inodesUsed:
+      value: "5"
+    timestamp: "1608049185530091383"
+    usedBytes:
+      value: "111"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: eaaa46ce
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":60000,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 13b6879e482909c0f72e3b2b366229a3a2023d51a851f68f8afd3643611e7fd4
+    labels:
+      io.kubernetes.container.name: cluster-samples-operator
+      io.kubernetes.pod.name: cluster-samples-operator-78cb8f4bdf-69mdz
+      io.kubernetes.pod.namespace: openshift-cluster-samples-operator
+      io.kubernetes.pod.uid: 88f4b06e-cfd0-4dac-a14d-b838e3036548
+    metadata:
+      attempt: 0
+      name: cluster-samples-operator
+  cpu:
+    timestamp: "1608049185511819693"
+    usageCoreNanoSeconds:
+      value: "3932109454"
+  memory:
+    timestamp: "1608049185511819693"
+    workingSetBytes:
+      value: "38694912"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/06d0576ffcfe195771164eb76582ce94ab5ed33935727bda73513d0d1296d217/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185511819693"
+    usedBytes:
+      value: "44"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: "9697738"
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 13f0ac493d4212b911a9512a0d9fbe1eb463329e0d40d0721b4b3e4169dddcd3
+    labels:
+      io.kubernetes.container.name: dns-node-resolver
+      io.kubernetes.pod.name: dns-default-5h54n
+      io.kubernetes.pod.namespace: openshift-dns
+      io.kubernetes.pod.uid: 67ed28db-f9c1-4bb7-8630-104148053583
+    metadata:
+      attempt: 0
+      name: dns-node-resolver
+  cpu:
+    timestamp: "1608049185505458899"
+    usageCoreNanoSeconds:
+      value: "1501041249"
+  memory:
+    timestamp: "1608049185505458899"
+    workingSetBytes:
+      value: "23793664"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/10bf1e96b3f908689d430c3650305483a3a2f2b7893bef60623f2881ead5db73/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185505458899"
+    usedBytes:
+      value: "367"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 1dd274da
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 16b02dc2891686b6147d6614bd36a534a086e79ee72c89b77e853da9ed8f09f0
+    labels:
+      io.kubernetes.container.name: etcdctl
+      io.kubernetes.pod.name: etcd-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-etcd
+      io.kubernetes.pod.uid: b4585be3-a96b-4e51-bc89-adc63d852268
+    metadata:
+      attempt: 0
+      name: etcdctl
+  cpu:
+    timestamp: "1608049185526355827"
+    usageCoreNanoSeconds:
+      value: "18552825"
+  memory:
+    timestamp: "1608049185526355827"
+    workingSetBytes:
+      value: "1515520"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/45ad982ad2041b4b6196dc62adcaa0cfbea72d16437de762e98a1bc2ed5ea708/merged
+    inodesUsed:
+      value: "10"
+    timestamp: "1608049185526355827"
+    usedBytes:
+      value: "215"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 3fda1dce
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":60000,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 197ce910862c4ac35a47c3e562ec3fda9e81c46909369952e53be6d9df2021b1
+    labels:
+      io.kubernetes.container.name: cluster-image-registry-operator
+      io.kubernetes.pod.name: cluster-image-registry-operator-6c88bfc65d-7mxck
+      io.kubernetes.pod.namespace: openshift-image-registry
+      io.kubernetes.pod.uid: 13c04070-973c-412b-9f5c-7f426a75065f
+    metadata:
+      attempt: 0
+      name: cluster-image-registry-operator
+  cpu:
+    timestamp: "1608049185492530670"
+    usageCoreNanoSeconds:
+      value: "9892966531"
+  memory:
+    timestamp: "1608049185492530670"
+    workingSetBytes:
+      value: "62513152"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/08ee5d8d67fb4fad382781a36d2db66f2a97bd3bf4981a4dba8916090ef0fe6f/merged
+    inodesUsed:
+      value: "11"
+    timestamp: "1608049185492530670"
+    usedBytes:
+      value: "216303"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: b06b791c
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 1bc47f2bb8eb9bf0dc1fb293b78891798e1b19a8a6fc95a180d6a9b064c783b3
+    labels:
+      io.kubernetes.container.name: machine-approver-controller
+      io.kubernetes.pod.name: machine-approver-bdd875948-ms49q
+      io.kubernetes.pod.namespace: openshift-cluster-machine-approver
+      io.kubernetes.pod.uid: 80565f71-5772-487d-8c03-ec7813058fd2
+    metadata:
+      attempt: 0
+      name: machine-approver-controller
+  cpu:
+    timestamp: "1608049185516065762"
+    usageCoreNanoSeconds:
+      value: "1679137668"
+  memory:
+    timestamp: "1608049185516065762"
+    workingSetBytes:
+      value: "22790144"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/3887418219f4ac0c9e4532febbb76af302d2b92ee5a917a1d5ea92628102596c/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185516065762"
+    usedBytes:
+      value: "67"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: cf8770f9
+      io.kubernetes.container.ports: '[{"name":"grpc","containerPort":50051,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 1e15cf3ae92f95d027e69143ed28644ca4e30df7a5e9867e0c599d9371d0873e
+    labels:
+      io.kubernetes.container.name: registry-server
+      io.kubernetes.pod.name: certified-operators-2xwxx
+      io.kubernetes.pod.namespace: openshift-marketplace
+      io.kubernetes.pod.uid: e48b674c-dc07-4a5f-922e-d003209f00e7
+    metadata:
+      attempt: 0
+      name: registry-server
+  cpu:
+    timestamp: "1608049185491648125"
+    usageCoreNanoSeconds:
+      value: "52409229722"
+  memory:
+    timestamp: "1608049185491648125"
+    workingSetBytes:
+      value: "77295616"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/43c482f9a3613b329f764ab9cf6cbf6ddf24f41e9b08630250c6e5d44e7d3883/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185491648125"
+    usedBytes:
+      value: "15224880"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 8ed7dbc
+      io.kubernetes.container.ports: '[{"name":"check-endpoints","hostPort":17697,"containerPort":17697,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "135"
+    id: 1e8f87c5283a80e3d2e947c27f08b4f15b2a6f6e67aef1faf7d0f45cb1d700de
+    labels:
+      io.kubernetes.container.name: kube-apiserver-check-endpoints
+      io.kubernetes.pod.name: kube-apiserver-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-apiserver
+      io.kubernetes.pod.uid: 932766fe-9c7e-45b5-9da0-c618a1947dee
+    metadata:
+      attempt: 0
+      name: kube-apiserver-check-endpoints
+  cpu:
+    timestamp: "1608049185527548655"
+    usageCoreNanoSeconds:
+      value: "15974117521"
+  memory:
+    timestamp: "1608049185527548655"
+    workingSetBytes:
+      value: "36495360"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/867ff9be600f4226ad4fc61e8838b97747f4c2d0be796dd81f8b1c816458e903/merged
+    inodesUsed:
+      value: "12"
+    timestamp: "1608049185527548655"
+    usedBytes:
+      value: "7200"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 2bc05665
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 1f1fb20167e3bbd595560e314f5db301c0908960e05daa382b9aa3bd0cc048d6
+    labels:
+      io.kubernetes.container.name: openshift-apiserver-operator
+      io.kubernetes.pod.name: openshift-apiserver-operator-67fbc98b9d-tcnf7
+      io.kubernetes.pod.namespace: openshift-apiserver-operator
+      io.kubernetes.pod.uid: d8d31ac8-7a27-4292-b64d-6ab337ba92bb
+    metadata:
+      attempt: 0
+      name: openshift-apiserver-operator
+  cpu:
+    timestamp: "1608049185496275944"
+    usageCoreNanoSeconds:
+      value: "64021899087"
+  memory:
+    timestamp: "1608049185496275944"
+    workingSetBytes:
+      value: "98545664"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/dc4e2c5a90b22ee17a6e533597aee443a5abf9458a5cf687d2ec63d8ef7c6487/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185496275944"
+    usedBytes:
+      value: "67"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: b298017a
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 1f2e60bb5098f2da0ff012e64a921b253394b9352653c5b467313240e70b07ad
+    labels:
+      io.kubernetes.container.name: kube-scheduler-cert-syncer
+      io.kubernetes.pod.name: openshift-kube-scheduler-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-scheduler
+      io.kubernetes.pod.uid: 0d865fa4-276f-418a-94df-4b82337c006b
+    metadata:
+      attempt: 0
+      name: kube-scheduler-cert-syncer
+  cpu:
+    timestamp: "1608049185525874908"
+    usageCoreNanoSeconds:
+      value: "5556159369"
+  memory:
+    timestamp: "1608049185525874908"
+    workingSetBytes:
+      value: "33890304"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/8935d5dfc58ba28011789c1617404863404930d39880dbba30de509f56845ef3/merged
+    inodesUsed:
+      value: "5"
+    timestamp: "1608049185525874908"
+    usedBytes:
+      value: "111"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: afa3f467
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 1f726fcf12843dfd4e777ff6a2ce11c633fa0459ae854aa1c5d800b2dcbc14b2
+    labels:
+      io.kubernetes.container.name: cluster-samples-operator-watch
+      io.kubernetes.pod.name: cluster-samples-operator-78cb8f4bdf-69mdz
+      io.kubernetes.pod.namespace: openshift-cluster-samples-operator
+      io.kubernetes.pod.uid: 88f4b06e-cfd0-4dac-a14d-b838e3036548
+    metadata:
+      attempt: 0
+      name: cluster-samples-operator-watch
+  cpu:
+    timestamp: "1608049185510910875"
+    usageCoreNanoSeconds:
+      value: "4598744966"
+  memory:
+    timestamp: "1608049185510910875"
+    workingSetBytes:
+      value: "22249472"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/4c97def007b4a2214f762d4d0e93d13da5af9bed063da221e85d32e39a894789/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185510910875"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 9edc0e31
+      io.kubernetes.container.ports: '[{"name":"grpc","containerPort":50051,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 21c07d85c7a44fab650568d517306301e3d46a01c13712cc1fc44a4c4b7b9fe6
+    labels:
+      io.kubernetes.container.name: registry-server
+      io.kubernetes.pod.name: community-operators-z5z47
+      io.kubernetes.pod.namespace: openshift-marketplace
+      io.kubernetes.pod.uid: e0aaffd8-be63-4a01-ac8d-9f07a8c5119a
+    metadata:
+      attempt: 0
+      name: registry-server
+  cpu:
+    timestamp: "1608049185489579511"
+    usageCoreNanoSeconds:
+      value: "64442009616"
+  memory:
+    timestamp: "1608049185489579511"
+    workingSetBytes:
+      value: "93159424"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/10894d98315e9a2b403f1b711e621ef7a54af8efb3f6f8f7ae9a375e9ea1fbfb/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185489579511"
+    usedBytes:
+      value: "25665584"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: e1cba2e5
+      io.kubernetes.container.ports: '[{"name":"check-endpoints","containerPort":17698,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "70"
+    id: 231e9c3a613a7bab22e15508936a61ac986c26d82a47f0465a623af5caaba86c
+    labels:
+      io.kubernetes.container.name: openshift-apiserver-check-endpoints
+      io.kubernetes.pod.name: apiserver-7cb676f55c-wzxkw
+      io.kubernetes.pod.namespace: openshift-apiserver
+      io.kubernetes.pod.uid: 73e1d520-1b7e-4bcb-bb71-fdf9798b2c66
+    metadata:
+      attempt: 0
+      name: openshift-apiserver-check-endpoints
+  cpu:
+    timestamp: "1608049185497238518"
+    usageCoreNanoSeconds:
+      value: "7530194295"
+  memory:
+    timestamp: "1608049185497238518"
+    workingSetBytes:
+      value: "30404608"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/ec40128be4746f0caf0ef864745a717aff96e1958a9ba4ccb038650b092dd7e0/merged
+    inodesUsed:
+      value: "8"
+    timestamp: "1608049185497238518"
+    usedBytes:
+      value: "7095"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 583fa6e5
+      io.kubernetes.container.ports: '[{"name":"http","hostPort":80,"containerPort":80,"protocol":"TCP"},{"name":"https","hostPort":443,"containerPort":443,"protocol":"TCP"},{"name":"metrics","hostPort":1936,"containerPort":1936,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "3600"
+    id: 2b5bd5a28f1d236ff5fe265daa54d6581baaeda6e93c5000622b197eba39e68b
+    labels:
+      io.kubernetes.container.name: router
+      io.kubernetes.pod.name: router-default-dcbbb64b9-mr7l2
+      io.kubernetes.pod.namespace: openshift-ingress
+      io.kubernetes.pod.uid: 38400141-edbd-49f9-9ab8-0cd1086aaa6d
+    metadata:
+      attempt: 0
+      name: router
+  cpu:
+    timestamp: "1608049185486940554"
+    usageCoreNanoSeconds:
+      value: "7633294181"
+  memory:
+    timestamp: "1608049185486940554"
+    workingSetBytes:
+      value: "56627200"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/59a4523b079fc7f34082700b74016d2156d28320f1001d9a0174f3744cbe93e1/merged
+    inodesUsed:
+      value: "26"
+    timestamp: "1608049185486940554"
+    usedBytes:
+      value: "25234"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: f90659b9
+      io.kubernetes.container.ports: '[{"name":"grpc","containerPort":50051,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 2dcc9aee1fa6761d2caf8240f787a74c8269a52ea1e32452501746bbc4685294
+    labels:
+      io.kubernetes.container.name: registry-server
+      io.kubernetes.pod.name: redhat-operators-lzc6c
+      io.kubernetes.pod.namespace: openshift-marketplace
+      io.kubernetes.pod.uid: 64a02125-48db-4ff8-b2be-c7b7c6ef5778
+    metadata:
+      attempt: 0
+      name: registry-server
+  cpu:
+    timestamp: "1608049185507887368"
+    usageCoreNanoSeconds:
+      value: "36961763271"
+  memory:
+    timestamp: "1608049185507887368"
+    workingSetBytes:
+      value: "106864640"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/fa0dadd65021e43598ad2b886574093105c5ed2d77dff585752f25e20aa89a0a/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185507887368"
+    usedBytes:
+      value: "10453040"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: aa7d4312
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":9154,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 2fe21d266aedcb709afe4428203e4f7fe59c07546f66d11a4c620cb892413aa7
+    labels:
+      io.kubernetes.container.name: kube-rbac-proxy
+      io.kubernetes.pod.name: dns-default-5h54n
+      io.kubernetes.pod.namespace: openshift-dns
+      io.kubernetes.pod.uid: 67ed28db-f9c1-4bb7-8630-104148053583
+    metadata:
+      attempt: 0
+      name: kube-rbac-proxy
+  cpu:
+    timestamp: "1608049185509764274"
+    usageCoreNanoSeconds:
+      value: "335476247"
+  memory:
+    timestamp: "1608049185509764274"
+    workingSetBytes:
+      value: "10334208"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/98015999012df039aab71c8c70ec137f57b6772a1cf2291113c497285d610fa1/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185509764274"
+    usedBytes:
+      value: "61"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 3a9d90b3
+      io.kubernetes.container.ports: '[{"containerPort":5000,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 31c79e28ad416d684443d696b224139a179e2fda38ec23ca8b846d4a9c8d3a1d
+    labels:
+      io.kubernetes.container.name: registry
+      io.kubernetes.pod.name: image-registry-58b6ddf67f-q4nf5
+      io.kubernetes.pod.namespace: openshift-image-registry
+      io.kubernetes.pod.uid: 6820bb5d-1964-42c1-bfcb-65d9116fe5c9
+    metadata:
+      attempt: 0
+      name: registry
+  cpu:
+    timestamp: "1608049185495168081"
+    usageCoreNanoSeconds:
+      value: "4581974093"
+  memory:
+    timestamp: "1608049185495168081"
+    workingSetBytes:
+      value: "30543872"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/230ee72c87893bfb62cefde00735ec367dfc4cef1f0b7bc003e2faa3a99e0465/merged
+    inodesUsed:
+      value: "19"
+    timestamp: "1608049185495168081"
+    usedBytes:
+      value: "1194161"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: a2955b9c
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "135"
+    id: 36273d8a2f22d46b7b949e61a7cde52c71c773d8502aa62ca04a6ce16b7a6009
+    labels:
+      io.kubernetes.container.name: kube-apiserver-cert-regeneration-controller
+      io.kubernetes.pod.name: kube-apiserver-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-apiserver
+      io.kubernetes.pod.uid: 932766fe-9c7e-45b5-9da0-c618a1947dee
+    metadata:
+      attempt: 0
+      name: kube-apiserver-cert-regeneration-controller
+  cpu:
+    timestamp: "1608049185528503764"
+    usageCoreNanoSeconds:
+      value: "16171204732"
+  memory:
+    timestamp: "1608049185528503764"
+    workingSetBytes:
+      value: "42725376"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/808a7cc2c3a54af40b55210b897f9695593277c62931882f2faf0da968307fec/merged
+    inodesUsed:
+      value: "11"
+    timestamp: "1608049185528503764"
+    usedBytes:
+      value: "7262"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: a89261b6
+      io.kubernetes.container.ports: '[{"containerPort":8080,"protocol":"TCP"},{"name":"metrics","containerPort":8081,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 36485d7abb4d8a22be914698587d1659c98c0d205f95b8e5fd76e434c06bf9ce
+    labels:
+      io.kubernetes.container.name: olm-operator
+      io.kubernetes.pod.name: olm-operator-5bbf9fc789-426mk
+      io.kubernetes.pod.namespace: openshift-operator-lifecycle-manager
+      io.kubernetes.pod.uid: 4644b003-a0a0-45ff-a27c-b38bfdd68916
+    metadata:
+      attempt: 0
+      name: olm-operator
+  cpu:
+    timestamp: "1608049185502505848"
+    usageCoreNanoSeconds:
+      value: "20678370556"
+  memory:
+    timestamp: "1608049185502505848"
+    workingSetBytes:
+      value: "151142400"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/9c37792a8ed26120a6a1a4223edfec9c3687afaa1f5220857f87a98649725a66/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185502505848"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 6900f230
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":9393,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "2"
+    id: 37c0fb1760bd584f4a6b0b7ffb79db2aeb795063fd376f7af2080b18c1af0fca
+    labels:
+      io.kubernetes.container.name: kube-rbac-proxy
+      io.kubernetes.pod.name: dns-operator-79765bc64f-gz89k
+      io.kubernetes.pod.namespace: openshift-dns-operator
+      io.kubernetes.pod.uid: ea999e81-8810-4841-9318-adbcc38512a0
+    metadata:
+      attempt: 0
+      name: kube-rbac-proxy
+  cpu:
+    timestamp: "1608049185488924321"
+    usageCoreNanoSeconds:
+      value: "286108288"
+  memory:
+    timestamp: "1608049185488924321"
+    workingSetBytes:
+      value: "8499200"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/2e943d956940c4c954a2035e634659d3493d83de0173b7a0526590c26025390c/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185488924321"
+    usedBytes:
+      value: "61"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 65abd34a
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 3ab861ade72514c90166c3d6f8cc464a901edef1206cdd999cd1e5e049b2d88b
+    labels:
+      io.kubernetes.container.name: etcd
+      io.kubernetes.pod.name: etcd-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-etcd
+      io.kubernetes.pod.uid: b4585be3-a96b-4e51-bc89-adc63d852268
+    metadata:
+      attempt: 0
+      name: etcd
+  cpu:
+    timestamp: "1608049185525178556"
+    usageCoreNanoSeconds:
+      value: "604542088927"
+  memory:
+    timestamp: "1608049185525178556"
+    workingSetBytes:
+      value: "213463040"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/9006e6e3a5818417d89ac60be7aa0cdbb20088e0107ca6a742739423b7611df1/merged
+    inodesUsed:
+      value: "10"
+    timestamp: "1608049185525178556"
+    usedBytes:
+      value: "215"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 5f1c4400
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 3ba90356c65decbd36b6e2b5f85eee2c18c2c29d86b907c9d23bf6bc8c58d970
+    labels:
+      io.kubernetes.container.name: openshift-controller-manager-operator
+      io.kubernetes.pod.name: openshift-controller-manager-operator-78984f4647-6jb5x
+      io.kubernetes.pod.namespace: openshift-controller-manager-operator
+      io.kubernetes.pod.uid: f864a12d-23cc-4ad2-9a78-e3a4ff0ff28c
+    metadata:
+      attempt: 0
+      name: openshift-controller-manager-operator
+  cpu:
+    timestamp: "1608049185505954967"
+    usageCoreNanoSeconds:
+      value: "24471732847"
+  memory:
+    timestamp: "1608049185505954967"
+    workingSetBytes:
+      value: "56619008"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/886e5c4bd92a669251e3c603e8b332d1f1e83ba60148db712050cb0622639a06/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185505954967"
+    usedBytes:
+      value: "67"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 13d28d61
+      io.kubernetes.container.ports: '[{"name":"https","hostPort":9101,"containerPort":9101,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "1"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 3de1144e0133e113570d691f68adf385f2c99a5c84612f52ca00b1fa91464d1d
+    labels:
+      io.kubernetes.container.name: kube-rbac-proxy
+      io.kubernetes.pod.name: sdn-lv4w8
+      io.kubernetes.pod.namespace: openshift-sdn
+      io.kubernetes.pod.uid: ac4c1064-4def-4f7a-986b-bf931ab36741
+    metadata:
+      attempt: 1
+      name: kube-rbac-proxy
+  cpu:
+    timestamp: "1608049185512248291"
+    usageCoreNanoSeconds:
+      value: "304676775"
+  memory:
+    timestamp: "1608049185512248291"
+    workingSetBytes:
+      value: "11878400"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/21de8dcb0282a5627c97a4a17751f1bdddfbc83963be7aa493db57752c680e1c/merged
+    inodesUsed:
+      value: "5"
+    timestamp: "1608049185512248291"
+    usedBytes:
+      value: "84"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: e166c16f
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 424aa4c2722ccff2ea8d25b58167c1e44740e0ae1315e8dfa88e3be103c0c3c3
+    labels:
+      io.kubernetes.container.name: etcd-metrics
+      io.kubernetes.pod.name: etcd-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-etcd
+      io.kubernetes.pod.uid: b4585be3-a96b-4e51-bc89-adc63d852268
+    metadata:
+      attempt: 0
+      name: etcd-metrics
+  cpu:
+    timestamp: "1608049185524452896"
+    usageCoreNanoSeconds:
+      value: "38065705597"
+  memory:
+    timestamp: "1608049185524452896"
+    workingSetBytes:
+      value: "17969152"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/4939b2ccdf2b70c28627adf45a7850f07d4515f0bb55e079b3bbe2eb94704d62/merged
+    inodesUsed:
+      value: "8"
+    timestamp: "1608049185524452896"
+    usedBytes:
+      value: "163"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 944721c9
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 457603578ec8628d0696309c802e67669a62d3e78260c167c38062804f9fefdb
+    labels:
+      io.kubernetes.container.name: kube-multus
+      io.kubernetes.pod.name: multus-9bd24
+      io.kubernetes.pod.namespace: openshift-multus
+      io.kubernetes.pod.uid: e24fd069-4bc6-4d58-a73c-a665343278db
+    metadata:
+      attempt: 0
+      name: kube-multus
+  cpu:
+    timestamp: "1608049185513565072"
+    usageCoreNanoSeconds:
+      value: "12403742631"
+  memory:
+    timestamp: "1608049185513565072"
+    workingSetBytes:
+      value: "4313088"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/982d74df05207c722b586d0e18b97f1fa67ae0fcc1a6cf2a323fd9848dae5f5e/merged
+    inodesUsed:
+      value: "14"
+    timestamp: "1608049185513565072"
+    usedBytes:
+      value: "235"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: c5b0adc1
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 495c63aea8901dc5b278191125576129f091addd7d9a4f95b61be30c2e3c2d55
+    labels:
+      io.kubernetes.container.name: kube-scheduler-operator-container
+      io.kubernetes.pod.name: openshift-kube-scheduler-operator-5d99f449b7-fk929
+      io.kubernetes.pod.namespace: openshift-kube-scheduler-operator
+      io.kubernetes.pod.uid: 6f154ced-6145-4b3e-a9ae-f93f51f66464
+    metadata:
+      attempt: 0
+      name: kube-scheduler-operator-container
+  cpu:
+    timestamp: "1608049185488285828"
+    usageCoreNanoSeconds:
+      value: "102882827926"
+  memory:
+    timestamp: "1608049185488285828"
+    workingSetBytes:
+      value: "57430016"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/19fff77a9e342aa22c12979f11638768f50678c82932df2b603481ad8b45fc09/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185488285828"
+    usedBytes:
+      value: "67"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: fcd3e4c3
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 50ef3f868b78ef615793016ade58db73bbe2fe87a6515006d090058efd5e9e74
+    labels:
+      io.kubernetes.container.name: ingress-operator
+      io.kubernetes.pod.name: ingress-operator-6b4d6848f5-wwnhj
+      io.kubernetes.pod.namespace: openshift-ingress-operator
+      io.kubernetes.pod.uid: f9e143dd-7157-4def-a402-8c9bb8e0d184
+    metadata:
+      attempt: 0
+      name: ingress-operator
+  cpu:
+    timestamp: "1608049185495863826"
+    usageCoreNanoSeconds:
+      value: "4851730451"
+  memory:
+    timestamp: "1608049185495863826"
+    workingSetBytes:
+      value: "33685504"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/979e406332df0f582cbb854e67936c9e9cbe326195582d536c7a6a1386a9b906/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185495863826"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: b71e7ea8
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "135"
+    id: 51c7a78a8ad4f839c8a5ba34add66d4795bc2de80dad33f85e2142dcf1cf6129
+    labels:
+      io.kubernetes.container.name: kube-apiserver-cert-syncer
+      io.kubernetes.pod.name: kube-apiserver-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-apiserver
+      io.kubernetes.pod.uid: 932766fe-9c7e-45b5-9da0-c618a1947dee
+    metadata:
+      attempt: 0
+      name: kube-apiserver-cert-syncer
+  cpu:
+    timestamp: "1608049185529071362"
+    usageCoreNanoSeconds:
+      value: "9131695052"
+  memory:
+    timestamp: "1608049185529071362"
+    workingSetBytes:
+      value: "36077568"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/7498d39ff546c313dcf0ee929639bab963e3016d6630082b160dfe156c1bdfb5/merged
+    inodesUsed:
+      value: "5"
+    timestamp: "1608049185529071362"
+    usedBytes:
+      value: "111"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: cb2044f0
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":60000,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 5232282980b5e4f632d58b795178383ed3f3008bac7cb9960f903fc39986dd2c
+    labels:
+      io.kubernetes.container.name: console-operator
+      io.kubernetes.pod.name: console-operator-78d99d4bfb-rnv6v
+      io.kubernetes.pod.namespace: openshift-console-operator
+      io.kubernetes.pod.uid: 8e1c676a-1360-4849-8a2b-7cc86f3f03c7
+    metadata:
+      attempt: 0
+      name: console-operator
+  cpu:
+    timestamp: "1608049185502957858"
+    usageCoreNanoSeconds:
+      value: "27500688174"
+  memory:
+    timestamp: "1608049185502957858"
+    workingSetBytes:
+      value: "59596800"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/e26ec307c2d6f087e60e45b0d04ee3a379303ddb7abb2e6d22dee4cdf9050c68/merged
+    inodesUsed:
+      value: "7"
+    timestamp: "1608049185502957858"
+    usedBytes:
+      value: "545"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 16e7b1fa
+      io.kubernetes.container.ports: '[{"name":"https","containerPort":6443,"protocol":"TCP"}]'
+      io.kubernetes.container.preStopHandler: '{"exec":{"command":["sleep","25"]}}'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "40"
+    id: 63ae65b3fab78a190276873ab37ff40578226cfd195570ca4a184f323e8d8b13
+    labels:
+      io.kubernetes.container.name: oauth-openshift
+      io.kubernetes.pod.name: oauth-openshift-55794bdfb-zz9wx
+      io.kubernetes.pod.namespace: openshift-authentication
+      io.kubernetes.pod.uid: 673c1f9e-8108-47ed-9d70-295bc5e0389d
+    metadata:
+      attempt: 0
+      name: oauth-openshift
+  cpu:
+    timestamp: "1608049185508366453"
+    usageCoreNanoSeconds:
+      value: "15248522819"
+  memory:
+    timestamp: "1608049185508366453"
+    workingSetBytes:
+      value: "39424000"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/c3e76ab5e88faa37314a5750ad7957eb5e8915a0975561e33b8f1afcde47030c/merged
+    inodesUsed:
+      value: "29"
+    timestamp: "1608049185508366453"
+    usedBytes:
+      value: "216944"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 16e7b1fa
+      io.kubernetes.container.ports: '[{"name":"https","containerPort":6443,"protocol":"TCP"}]'
+      io.kubernetes.container.preStopHandler: '{"exec":{"command":["sleep","25"]}}'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "40"
+    id: 68426d14ce8f92f500608a20d570fbf0dab2a13201481ef4bb6d08c3ef02136a
+    labels:
+      io.kubernetes.container.name: oauth-openshift
+      io.kubernetes.pod.name: oauth-openshift-55794bdfb-n4tqc
+      io.kubernetes.pod.namespace: openshift-authentication
+      io.kubernetes.pod.uid: 707eac2f-1669-48be-8363-14e9503d608e
+    metadata:
+      attempt: 0
+      name: oauth-openshift
+  cpu:
+    timestamp: "1608049185504554524"
+    usageCoreNanoSeconds:
+      value: "17889536694"
+  memory:
+    timestamp: "1608049185504554524"
+    workingSetBytes:
+      value: "33247232"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/c6f2f89c46955b0a398b1cc452177e8b554d943b8233094cb6e573cc85e442fe/merged
+    inodesUsed:
+      value: "29"
+    timestamp: "1608049185504554524"
+    usedBytes:
+      value: "216944"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 33e1ef77
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 6bf0cb9dfaba25e4ba09cbfb8b4243ac8e10146333b25e5b16a50751941426d5
+    labels:
+      io.kubernetes.container.name: service-ca-operator
+      io.kubernetes.pod.name: service-ca-operator-65996b88b9-wtrdf
+      io.kubernetes.pod.namespace: openshift-service-ca-operator
+      io.kubernetes.pod.uid: 2eded05b-0f31-4bb8-b0ef-a51eb2580597
+    metadata:
+      attempt: 0
+      name: service-ca-operator
+  cpu:
+    timestamp: "1608049185485102494"
+    usageCoreNanoSeconds:
+      value: "14527103214"
+  memory:
+    timestamp: "1608049185485102494"
+    workingSetBytes:
+      value: "48164864"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/fac79801d8b2e14b23287b20652f08018588dbdb1062c61f1f920da98470cba0/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185485102494"
+    usedBytes:
+      value: "67"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 9b175b93
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 75a002f28416c10f28b7b96f485d3da5385ed801522c93e56e614c1a761934dd
+    labels:
+      io.kubernetes.container.name: cluster-node-tuning-operator
+      io.kubernetes.pod.name: cluster-node-tuning-operator-7646bb5875-xmt4q
+      io.kubernetes.pod.namespace: openshift-cluster-node-tuning-operator
+      io.kubernetes.pod.uid: 43c0fe91-108f-4977-b1bd-e1b3c7dbfcb6
+    metadata:
+      attempt: 0
+      name: cluster-node-tuning-operator
+  cpu:
+    timestamp: "1608049185483029065"
+    usageCoreNanoSeconds:
+      value: "1679928154"
+  memory:
+    timestamp: "1608049185483029065"
+    workingSetBytes:
+      value: "21073920"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/04ca9fbc73f74aceebc32512b84e15666f8ae9ede0b88f2f2d1f9f023423ad62/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185483029065"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: f86a88cd
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 76afc466d0ca9939d3839d8bcb52332f63a8bf7f5f3070395f69708b6174ad46
+    labels:
+      io.kubernetes.container.name: kube-controller-manager-recovery-controller
+      io.kubernetes.pod.name: kube-controller-manager-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-controller-manager
+      io.kubernetes.pod.uid: ae08185f-7c8b-4326-b8f6-9e40e388b244
+    metadata:
+      attempt: 0
+      name: kube-controller-manager-recovery-controller
+  cpu:
+    timestamp: "1608049185529569733"
+    usageCoreNanoSeconds:
+      value: "14676957109"
+  memory:
+    timestamp: "1608049185529569733"
+    workingSetBytes:
+      value: "36995072"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/796b26d1ce81405addb5c9c1544d77fada2f3b23a4a67cff58c2a0414ea5d258/merged
+    inodesUsed:
+      value: "12"
+    timestamp: "1608049185529569733"
+    usedBytes:
+      value: "7260"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 548fb7d4
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 776d742aeda6827479dda08fe2928b1d74586e002e929db5dd3f0d077bf91633
+    labels:
+      io.kubernetes.container.name: authentication-operator
+      io.kubernetes.pod.name: authentication-operator-7496b88c8b-nchs2
+      io.kubernetes.pod.namespace: openshift-authentication-operator
+      io.kubernetes.pod.uid: d92e982b-28f1-48d5-843f-a2030a411d84
+    metadata:
+      attempt: 0
+      name: authentication-operator
+  cpu:
+    timestamp: "1608049185483931216"
+    usageCoreNanoSeconds:
+      value: "119306395263"
+  memory:
+    timestamp: "1608049185483931216"
+    workingSetBytes:
+      value: "96096256"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/8eb3e6fd390f402c5ba8e189aa1787d7c6c4e6aec04a13bbccce237a6875a5f4/merged
+    inodesUsed:
+      value: "12"
+    timestamp: "1608049185483931216"
+    usedBytes:
+      value: "216340"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 11390eda
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 77dadc4bbca8450061c5d12d2d720c381acbcdbe1ac2281292eef98a9934bb97
+    labels:
+      io.kubernetes.container.name: node-ca
+      io.kubernetes.pod.name: node-ca-pv9rn
+      io.kubernetes.pod.namespace: openshift-image-registry
+      io.kubernetes.pod.uid: 18fa0295-daa8-4a76-ac1f-cf4f566142af
+    metadata:
+      attempt: 0
+      name: node-ca
+  cpu:
+    timestamp: "1608049185515481782"
+    usageCoreNanoSeconds:
+      value: "2292197531"
+  memory:
+    timestamp: "1608049185515481782"
+    workingSetBytes:
+      value: "20033536"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/9dd2ce6fe8f76fe5d4efe517b5b34f62431077b1841da96774ff4657242e6cfd/merged
+    inodesUsed:
+      value: "6"
+    timestamp: "1608049185515481782"
+    usedBytes:
+      value: "104"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 639ebddd
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 7fe0c375b0a4f40dbd8a0fa1e174d8d0d22fe212cc3fa1d1be830cb61eb023e5
+    labels:
+      io.kubernetes.container.name: migrator
+      io.kubernetes.pod.name: migrator-7bfc77895c-t5qqq
+      io.kubernetes.pod.namespace: openshift-kube-storage-version-migrator
+      io.kubernetes.pod.uid: b923523f-1aeb-4068-a819-9ef747c007eb
+    metadata:
+      attempt: 0
+      name: migrator
+  cpu:
+    timestamp: "1608049185497786026"
+    usageCoreNanoSeconds:
+      value: "982576118"
+  memory:
+    timestamp: "1608049185497786026"
+    workingSetBytes:
+      value: "21315584"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/333f2c874610aa9d74f877df734a3b83c5aac015e98ddf711b21d540b6af35d1/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185497786026"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 3b493038
+      io.kubernetes.container.ports: '[{"name":"https","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.preStopHandler: '{"exec":{"command":["sleep","25"]}}'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "40"
+    id: 84d71818a757880025362b5341d8f0553d4d30c82f0fbab3bdaa2321720fe626
+    labels:
+      io.kubernetes.container.name: console
+      io.kubernetes.pod.name: console-6fbc6894f9-dnwrt
+      io.kubernetes.pod.namespace: openshift-console
+      io.kubernetes.pod.uid: dcd562c0-2363-445e-927c-4095fec012e0
+    metadata:
+      attempt: 0
+      name: console
+  cpu:
+    timestamp: "1608049185509241485"
+    usageCoreNanoSeconds:
+      value: "5391943781"
+  memory:
+    timestamp: "1608049185509241485"
+    workingSetBytes:
+      value: "26726400"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/d3b065808dddf2ffceabb27d69e7b27c650b15e7799f834e4c422fd2650adcfa/merged
+    inodesUsed:
+      value: "7"
+    timestamp: "1608049185509241485"
+    usedBytes:
+      value: "161"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 759fd77
+      io.kubernetes.container.ports: '[{"hostPort":10257,"containerPort":10257,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 857cfa335a43e7f8af39b91dcd6b586377b9ef774201f550ffe9183fd9f31969
+    labels:
+      io.kubernetes.container.name: kube-controller-manager
+      io.kubernetes.pod.name: kube-controller-manager-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-controller-manager
+      io.kubernetes.pod.uid: ae08185f-7c8b-4326-b8f6-9e40e388b244
+    metadata:
+      attempt: 0
+      name: kube-controller-manager
+  cpu:
+    timestamp: "1608049185531364754"
+    usageCoreNanoSeconds:
+      value: "62743542946"
+  memory:
+    timestamp: "1608049185531364754"
+    workingSetBytes:
+      value: "155291648"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/a0d5224137ec629e14f858b6ea371f3d6da8456489e54c16bb82ca49e792b28e/merged
+    inodesUsed:
+      value: "14"
+    timestamp: "1608049185531364754"
+    usedBytes:
+      value: "216395"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 4d04c639
+      io.kubernetes.container.ports: '[{"containerPort":5443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 8974757e13ea74887b70e72cd08333febc5f7af6ace28e7b6c0a4ffd48b49210
+    labels:
+      io.kubernetes.container.name: packageserver
+      io.kubernetes.pod.name: packageserver-6d6f54cf77-kth42
+      io.kubernetes.pod.namespace: openshift-operator-lifecycle-manager
+      io.kubernetes.pod.uid: 3bf4fe3a-7e53-4da1-8525-5f2bd0055803
+    metadata:
+      attempt: 0
+      name: packageserver
+  cpu:
+    timestamp: "1608049185480531562"
+    usageCoreNanoSeconds:
+      value: "40754362475"
+  memory:
+    timestamp: "1608049185480531562"
+    workingSetBytes:
+      value: "55345152"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/369cfadf8fd5fbe8448e1c341ce58f86b1602f94db76164b2f9cd8fb18582d45/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185480531562"
+    usedBytes:
+      value: "68"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 76283ef2
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "130"
+    id: 8aca82d7b0d217abc87918ae5f75b67659c5b3a4f02ec840770c9583ae2fe242
+    labels:
+      io.kubernetes.container.name: cluster-version-operator
+      io.kubernetes.pod.name: cluster-version-operator-6cd575b468-twnqf
+      io.kubernetes.pod.namespace: openshift-cluster-version
+      io.kubernetes.pod.uid: 8d68578c-0b9f-4c85-94da-a78118c9e3d4
+    metadata:
+      attempt: 0
+      name: cluster-version-operator
+  cpu:
+    timestamp: "1608049185522986901"
+    usageCoreNanoSeconds:
+      value: "20413370796"
+  memory:
+    timestamp: "1608049185522986901"
+    workingSetBytes:
+      value: "60071936"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/7bce3a1d6c71b5ab7e890b22661b346dd962abb78e836d1cea860bf71c4ef79d/merged
+    inodesUsed:
+      value: "6"
+    timestamp: "1608049185522986901"
+    usedBytes:
+      value: "111"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 2322e428
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "2"
+    id: 8fd04651890feb0b00087949abf19888491503ac90a62b2326033b0f34dcb532
+    labels:
+      io.kubernetes.container.name: dns-operator
+      io.kubernetes.pod.name: dns-operator-79765bc64f-gz89k
+      io.kubernetes.pod.namespace: openshift-dns-operator
+      io.kubernetes.pod.uid: ea999e81-8810-4841-9318-adbcc38512a0
+    metadata:
+      attempt: 0
+      name: dns-operator
+  cpu:
+    timestamp: "1608049185501535747"
+    usageCoreNanoSeconds:
+      value: "3071468956"
+  memory:
+    timestamp: "1608049185501535747"
+    workingSetBytes:
+      value: "27406336"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/0513a55960b074bccdb319b38a70bdfad593754131ec87241973b39f4537e396/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185501535747"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: "99283785"
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 90e62ca8fe63cee4be7c8a77682a446a58b9a4771a9ac1f2955469345de8a839
+    labels:
+      io.kubernetes.container.name: openshift-config-operator
+      io.kubernetes.pod.name: openshift-config-operator-6bdcdddff-h8xx4
+      io.kubernetes.pod.namespace: openshift-config-operator
+      io.kubernetes.pod.uid: 0a8fd986-90a1-4018-8089-b531d2c86f5e
+    metadata:
+      attempt: 0
+      name: openshift-config-operator
+  cpu:
+    timestamp: "1608049185494721689"
+    usageCoreNanoSeconds:
+      value: "31979989536"
+  memory:
+    timestamp: "1608049185494721689"
+    workingSetBytes:
+      value: "44482560"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/efe80faa7571e9cb54065c9d57cefd3640550ddc7261f74fcb47a1a58a5a100d/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185494721689"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: b63df1df
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "3"
+    id: 92bd50f78b5015a2557b52244710ed4125e33367e28de7edbf2ccc40f7ab9cfe
+    labels:
+      io.kubernetes.container.name: guard
+      io.kubernetes.pod.name: etcd-quorum-guard-7884f64988-q64ds
+      io.kubernetes.pod.namespace: openshift-etcd
+      io.kubernetes.pod.uid: 4745f59b-d788-4086-8fbf-57768aa9f0d5
+    metadata:
+      attempt: 0
+      name: guard
+  cpu:
+    timestamp: "1608049185515008138"
+    usageCoreNanoSeconds:
+      value: "15198651654"
+  memory:
+    timestamp: "1608049185515008138"
+    workingSetBytes:
+      value: "8708096"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/4b567215054b900a7d21966852693a094754c8b9be8523fa3a370ec6be72dbbd/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185515008138"
+    usedBytes:
+      value: "68"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 1485e38d
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 9424ddc4e9b92dac16be466d1a445e518c425e4beca1b9b3f9f5951826e0ef17
+    labels:
+      io.kubernetes.container.name: network-operator
+      io.kubernetes.pod.name: network-operator-74646b4d69-28v5s
+      io.kubernetes.pod.namespace: openshift-network-operator
+      io.kubernetes.pod.uid: 41dd1995-2598-4191-8c1c-b1653e6fabf5
+    metadata:
+      attempt: 0
+      name: network-operator
+  cpu:
+    timestamp: "1608049185523438475"
+    usageCoreNanoSeconds:
+      value: "12480433207"
+  memory:
+    timestamp: "1608049185523438475"
+    workingSetBytes:
+      value: "51736576"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/6664d7659ce55e86d814efe025798254610c54273ae03d34ee81c04ad1897cbc/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185523438475"
+    usedBytes:
+      value: "65"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 4d04c639
+      io.kubernetes.container.ports: '[{"containerPort":5443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 963cf7cd5c4d9d54a3c44a313c76337126bd59bae99f7e8cec4ab908789a55c4
+    labels:
+      io.kubernetes.container.name: packageserver
+      io.kubernetes.pod.name: packageserver-6d6f54cf77-9cwmm
+      io.kubernetes.pod.namespace: openshift-operator-lifecycle-manager
+      io.kubernetes.pod.uid: a5d7ec36-63e2-4354-82cd-cf2fa1c0cfdd
+    metadata:
+      attempt: 0
+      name: packageserver
+  cpu:
+    timestamp: "1608049185478023311"
+    usageCoreNanoSeconds:
+      value: "39764866775"
+  memory:
+    timestamp: "1608049185478023311"
+    workingSetBytes:
+      value: "43905024"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/cdd918073188fab108c25964efdc303d9d01ceefdc269c4fda51f45358a86160/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185478023311"
+    usedBytes:
+      value: "68"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 8e2ed456
+      io.kubernetes.container.ports: '[{"containerPort":8080,"protocol":"TCP"},{"name":"metrics","containerPort":8081,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: 9b28e38777411dd87893d7de47b6916634a029b22fd5230340c48f386d23609b
+    labels:
+      io.kubernetes.container.name: catalog-operator
+      io.kubernetes.pod.name: catalog-operator-56548c6859-rdvfm
+      io.kubernetes.pod.namespace: openshift-operator-lifecycle-manager
+      io.kubernetes.pod.uid: dc746e6f-c1b5-482c-b5af-b02dd9defbd4
+    metadata:
+      attempt: 0
+      name: catalog-operator
+  cpu:
+    timestamp: "1608049185492123368"
+    usageCoreNanoSeconds:
+      value: "9203753254"
+  memory:
+    timestamp: "1608049185492123368"
+    workingSetBytes:
+      value: "81125376"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/dd69d875456aece9da3ca4e9ee4cb841747503eda13859ba1c96489767876f31/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185492123368"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 3b493038
+      io.kubernetes.container.ports: '[{"name":"https","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.preStopHandler: '{"exec":{"command":["sleep","25"]}}'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "40"
+    id: a2889d3ec624edc1a3461ddfeb59af7c69acc5380881c4e543fdaf116c6bafc2
+    labels:
+      io.kubernetes.container.name: console
+      io.kubernetes.pod.name: console-6fbc6894f9-cwlnq
+      io.kubernetes.pod.namespace: openshift-console
+      io.kubernetes.pod.uid: 9d19f980-c576-469c-bf8f-3abc273e24bf
+    metadata:
+      attempt: 0
+      name: console
+  cpu:
+    timestamp: "1608049185503458714"
+    usageCoreNanoSeconds:
+      value: "4203077826"
+  memory:
+    timestamp: "1608049185503458714"
+    workingSetBytes:
+      value: "23179264"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/a8342b458bab433cd5e549cbc020a893f3da66ccb49fe0329760fe9064ae8634/merged
+    inodesUsed:
+      value: "7"
+    timestamp: "1608049185503458714"
+    usedBytes:
+      value: "161"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: f304dcc4
+      io.kubernetes.container.ports: '[{"name":"http","containerPort":8080,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "1"
+    id: a2da491d1cdc1ceb9ecfcf5d004b810ceb6f2c453b27b6de37d15fc46d75743c
+    labels:
+      io.kubernetes.container.name: download-server
+      io.kubernetes.pod.name: downloads-756d9458cc-wh4dg
+      io.kubernetes.pod.namespace: openshift-console
+      io.kubernetes.pod.uid: 485358b7-35c8-4a7e-bfad-d8e3c8ae5cb5
+    metadata:
+      attempt: 0
+      name: download-server
+  cpu:
+    timestamp: "1608049185512796720"
+    usageCoreNanoSeconds:
+      value: "6149266153"
+  memory:
+    timestamp: "1608049185512796720"
+    workingSetBytes:
+      value: "75403264"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/528d0c0380e440e1d7160d4d96436f41c509a1b3f20766afb216d16e67a1b551/merged
+    inodesUsed:
+      value: "44"
+    timestamp: "1608049185512796720"
+    usedBytes:
+      value: "866188532"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 20df46b8
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: a89bafe77b84017dd9a879ed4e36294bd5d7939315ac93ae05115e47f9ca76ab
+    labels:
+      io.kubernetes.container.name: network-metrics-daemon
+      io.kubernetes.pod.name: network-metrics-daemon-6zwv7
+      io.kubernetes.pod.namespace: openshift-multus
+      io.kubernetes.pod.uid: c122b02e-b501-4e19-b77d-f4530c02df63
+    metadata:
+      attempt: 0
+      name: network-metrics-daemon
+  cpu:
+    timestamp: "1608049185502087355"
+    usageCoreNanoSeconds:
+      value: "1799903070"
+  memory:
+    timestamp: "1608049185502087355"
+    workingSetBytes:
+      value: "29032448"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/e22c79d987a032c89cdd03aa993f6101fc2e00ad3d7f66e1f86fca0c2e5df886/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185502087355"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 51bf5af2
+      io.kubernetes.container.ports: '[{"containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "70"
+    id: a96f399f428dc1e4cf29a0b27bcf980e87aa10cb1f52649b24825f89a56e4219
+    labels:
+      io.kubernetes.container.name: openshift-apiserver
+      io.kubernetes.pod.name: apiserver-7cb676f55c-wzxkw
+      io.kubernetes.pod.namespace: openshift-apiserver
+      io.kubernetes.pod.uid: 73e1d520-1b7e-4bcb-bb71-fdf9798b2c66
+    metadata:
+      attempt: 0
+      name: openshift-apiserver
+  cpu:
+    timestamp: "1608049185507077911"
+    usageCoreNanoSeconds:
+      value: "51967548131"
+  memory:
+    timestamp: "1608049185507077911"
+    workingSetBytes:
+      value: "157925376"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/e900b3f47c80b6944fde1ffe2ba57c87a1a311804506e64aa2777b2ced270b82/merged
+    inodesUsed:
+      value: "21"
+    timestamp: "1608049185507077911"
+    usedBytes:
+      value: "216527"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 49705dc6
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: ab5a88650312904e61152d150adb721c787220a8f0663f67a883230947df0e1d
+    labels:
+      io.kubernetes.container.name: kube-apiserver-operator
+      io.kubernetes.pod.name: kube-apiserver-operator-7f55947457-snl9d
+      io.kubernetes.pod.namespace: openshift-kube-apiserver-operator
+      io.kubernetes.pod.uid: b8906dcc-ca54-43aa-a230-7077866164dd
+    metadata:
+      attempt: 0
+      name: kube-apiserver-operator
+  cpu:
+    timestamp: "1608049185491180059"
+    usageCoreNanoSeconds:
+      value: "152389993737"
+  memory:
+    timestamp: "1608049185491180059"
+    workingSetBytes:
+      value: "93728768"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/7efde8f672972e92fc19d92985036f529eb65942f8eef3e6d4cd91fb8cb634ce/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185491180059"
+    usedBytes:
+      value: "67"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: fc7c80ca
+      io.kubernetes.container.ports: '[{"name":"dns","containerPort":5353,"protocol":"UDP"},{"name":"dns-tcp","containerPort":5353,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: b6f05b8c3f6ea21ce4266bc93d8670eab3f64d13ec26445cceea29c201b9a505
+    labels:
+      io.kubernetes.container.name: dns
+      io.kubernetes.pod.name: dns-default-5h54n
+      io.kubernetes.pod.namespace: openshift-dns
+      io.kubernetes.pod.uid: 67ed28db-f9c1-4bb7-8630-104148053583
+    metadata:
+      attempt: 0
+      name: dns
+  cpu:
+    timestamp: "1608049185511353030"
+    usageCoreNanoSeconds:
+      value: "10238803990"
+  memory:
+    timestamp: "1608049185511353030"
+    workingSetBytes:
+      value: "28319744"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/c5950e6481c2cc9ce59911e767fc79384f64b30ba90eebfb6ce6fe26c3524b8b/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185511353030"
+    usedBytes:
+      value: "44"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 6b0150d1
+      io.kubernetes.container.ports: '[{"name":"https","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: bbdf37470d9f682f5cb5bac5541f89029d07edcac6799205d32a2eb0756ff16e
+    labels:
+      io.kubernetes.container.name: kube-rbac-proxy
+      io.kubernetes.pod.name: multus-admission-controller-r69t2
+      io.kubernetes.pod.namespace: openshift-multus
+      io.kubernetes.pod.uid: b14ce83c-c338-4f49-8a64-461bb2d92ab8
+    metadata:
+      attempt: 0
+      name: kube-rbac-proxy
+  cpu:
+    timestamp: "1608049185496755852"
+    usageCoreNanoSeconds:
+      value: "365935383"
+  memory:
+    timestamp: "1608049185496755852"
+    workingSetBytes:
+      value: "12386304"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/659ef0df2267f7332f7283873b992953417316b3d1b5bc6422781159d30b0de4/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185496755852"
+    usedBytes:
+      value: "44"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: "41829893"
+      io.kubernetes.container.ports: '[{"hostPort":10357,"containerPort":10357,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: c4fcefdc77d5170e56a99fea9cfc28a12a2782b51cf25cae3c06bc5cf08c4290
+    labels:
+      io.kubernetes.container.name: cluster-policy-controller
+      io.kubernetes.pod.name: kube-controller-manager-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-controller-manager
+      io.kubernetes.pod.uid: ae08185f-7c8b-4326-b8f6-9e40e388b244
+    metadata:
+      attempt: 0
+      name: cluster-policy-controller
+  cpu:
+    timestamp: "1608049185530635562"
+    usageCoreNanoSeconds:
+      value: "13460173964"
+  memory:
+    timestamp: "1608049185530635562"
+    workingSetBytes:
+      value: "83873792"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/a5d48e34322a11609f136da368b6e32db9c7462cf55bc7a3f83788d17f53184b/merged
+    inodesUsed:
+      value: "5"
+    timestamp: "1608049185530635562"
+    usedBytes:
+      value: "111"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 7a8252df
+      io.kubernetes.container.ports: '[{"name":"healthz","hostPort":10256,"containerPort":10256,"protocol":"TCP"}]'
+      io.kubernetes.container.preStopHandler: '{"exec":{"command":["rm","-f","/etc/cni/net.d/80-openshift-network.conf","/host/opt/cni/bin/openshift-sdn"]}}'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: ccf1dfdbba23ad50e6e0b799af5dde6c35ff23f5f7dfc16f26114859dd169832
+    labels:
+      io.kubernetes.container.name: sdn
+      io.kubernetes.pod.name: sdn-lv4w8
+      io.kubernetes.pod.namespace: openshift-sdn
+      io.kubernetes.pod.uid: ac4c1064-4def-4f7a-986b-bf931ab36741
+    metadata:
+      attempt: 0
+      name: sdn
+  cpu:
+    timestamp: "1608049185521049777"
+    usageCoreNanoSeconds:
+      value: "29642134502"
+  memory:
+    timestamp: "1608049185521049777"
+    workingSetBytes:
+      value: "62173184"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/fd43e8613c19d4ffaf5e2b8c3aa4feeb426b865bf423988352076f6c74ce1163/merged
+    inodesUsed:
+      value: "17"
+    timestamp: "1608049185521049777"
+    usedBytes:
+      value: "299"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 6f67f28a
+      io.kubernetes.container.ports: '[{"name":"metrics-port","containerPort":9091,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: d1645a6f3b44e42b16c242f14d4f948e5d4dcd9a06c03227602e9c0137350b8e
+    labels:
+      io.kubernetes.container.name: multus-admission-controller
+      io.kubernetes.pod.name: multus-admission-controller-r69t2
+      io.kubernetes.pod.namespace: openshift-multus
+      io.kubernetes.pod.uid: b14ce83c-c338-4f49-8a64-461bb2d92ab8
+    metadata:
+      attempt: 0
+      name: multus-admission-controller
+  cpu:
+    timestamp: "1608049185506513577"
+    usageCoreNanoSeconds:
+      value: "2643337129"
+  memory:
+    timestamp: "1608049185506513577"
+    workingSetBytes:
+      value: "27594752"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/a8c10c247189a43f518ef58f02baa8b6edd832bac20c4259f21998fadcfd9c6a/merged
+    inodesUsed:
+      value: "6"
+    timestamp: "1608049185506513577"
+    usedBytes:
+      value: "1059"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 63f2db03
+      io.kubernetes.container.ports: '[{"name":"https","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: d18396ea98ca86be0c555dc44fcf6081ea5d8cc8e8b23c9ebb42967038205614
+    labels:
+      io.kubernetes.container.name: kube-rbac-proxy
+      io.kubernetes.pod.name: network-metrics-daemon-6zwv7
+      io.kubernetes.pod.namespace: openshift-multus
+      io.kubernetes.pod.uid: c122b02e-b501-4e19-b77d-f4530c02df63
+    metadata:
+      attempt: 0
+      name: kube-rbac-proxy
+  cpu:
+    timestamp: "1608049185490616483"
+    usageCoreNanoSeconds:
+      value: "315388133"
+  memory:
+    timestamp: "1608049185490616483"
+    workingSetBytes:
+      value: "11907072"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/54be52f377e0e1527aba374e57ace6c6328a9ee4c0b55fc6464bb98eb7b77422/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185490616483"
+    usedBytes:
+      value: "44"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: f304dcc4
+      io.kubernetes.container.ports: '[{"name":"http","containerPort":8080,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "1"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "1"
+    id: d8326bfe95a2635f6c10b104cd787f74eba2bc90ace3e591f8e63148f2185131
+    labels:
+      io.kubernetes.container.name: download-server
+      io.kubernetes.pod.name: downloads-756d9458cc-26fw4
+      io.kubernetes.pod.namespace: openshift-console
+      io.kubernetes.pod.uid: 4412ca4f-8f60-45d8-b823-c143268ac478
+    metadata:
+      attempt: 1
+      name: download-server
+  cpu:
+    timestamp: "1608049185481704284"
+    usageCoreNanoSeconds:
+      value: "5547180891"
+  memory:
+    timestamp: "1608049185481704284"
+    workingSetBytes:
+      value: "26001408"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/bd15aedcd124ded9933bc82a4a924d5b76590f1cfa89b250ffbb5b0203811d11/merged
+    inodesUsed:
+      value: "44"
+    timestamp: "1608049185481704284"
+    usedBytes:
+      value: "866188532"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 7a44bf43
+      io.kubernetes.container.ports: '[{"hostPort":10259,"containerPort":10259,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: e139a9bb52a0d38c52758e7ee429eeea9a5cfbf48fc40e2870fc8f397a9977f3
+    labels:
+      io.kubernetes.container.name: kube-scheduler
+      io.kubernetes.pod.name: openshift-kube-scheduler-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-scheduler
+      io.kubernetes.pod.uid: 0d865fa4-276f-418a-94df-4b82337c006b
+    metadata:
+      attempt: 0
+      name: kube-scheduler
+  cpu:
+    timestamp: "1608049185526936943"
+    usageCoreNanoSeconds:
+      value: "11568006264"
+  memory:
+    timestamp: "1608049185526936943"
+    workingSetBytes:
+      value: "39415808"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/ea4c2f0ce8406eaf85041c1170158b25499fcb4daac8fcb3d49a271f19421a92/merged
+    inodesUsed:
+      value: "5"
+    timestamp: "1608049185526936943"
+    usedBytes:
+      value: "111"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 3a677781
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: e42646e7c73e41f6bcbcdde58878cf2b4ab6f0066bda0b14aa1f0200127108e4
+    labels:
+      io.kubernetes.container.name: kube-controller-manager-operator
+      io.kubernetes.pod.name: kube-controller-manager-operator-cd5478966-vlb8c
+      io.kubernetes.pod.namespace: openshift-kube-controller-manager-operator
+      io.kubernetes.pod.uid: a0ca8825-6637-4267-bffb-f247f31c57a4
+    metadata:
+      attempt: 0
+      name: kube-controller-manager-operator
+  cpu:
+    timestamp: "1608049185493249401"
+    usageCoreNanoSeconds:
+      value: "94976782125"
+  memory:
+    timestamp: "1608049185493249401"
+    workingSetBytes:
+      value: "61919232"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/7a2793b0af5fce6080eed61b44cb72ac1b7c4d0a76d55b37ed3d55eda9505259/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185493249401"
+    usedBytes:
+      value: "67"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 960cc3da
+      io.kubernetes.container.ports: '[{"name":"grpc","containerPort":50051,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: e5d2cdcb2f7127d034dc03506d93aab7657b879c92d5114b5117850f432ac668
+    labels:
+      io.kubernetes.container.name: registry-server
+      io.kubernetes.pod.name: redhat-marketplace-dxjl5
+      io.kubernetes.pod.namespace: openshift-marketplace
+      io.kubernetes.pod.uid: 6b6e83ad-5847-4244-8316-530fe5e157d7
+    metadata:
+      attempt: 0
+      name: registry-server
+  cpu:
+    timestamp: "1608049185477196456"
+    usageCoreNanoSeconds:
+      value: "10361246019"
+  memory:
+    timestamp: "1608049185477196456"
+    workingSetBytes:
+      value: "71856128"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/e11fb89c2500e2579b66fbe1275233da8a08da5776fcf2777ebc4d364381f836/merged
+    inodesUsed:
+      value: "3"
+    timestamp: "1608049185477196456"
+    usedBytes:
+      value: "10420272"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 16bce567
+      io.kubernetes.container.preStopHandler: '{"exec":{"command":["/var/lib/tuned/bin/run","stop"]}}'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: ee5cfce4ee89c12c4d2bc53b6535f10f5e4763c1965927ef029ae0bc27bf60b2
+    labels:
+      io.kubernetes.container.name: tuned
+      io.kubernetes.pod.name: tuned-krcqv
+      io.kubernetes.pod.namespace: openshift-cluster-node-tuning-operator
+      io.kubernetes.pod.uid: d7410cbc-3ef2-4faa-8cd1-ae99aa94d092
+    metadata:
+      attempt: 0
+      name: tuned
+  cpu:
+    timestamp: "1608049185514235811"
+    usageCoreNanoSeconds:
+      value: "3610156618"
+  memory:
+    timestamp: "1608049185514235811"
+    workingSetBytes:
+      value: "40988672"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/4b098f6cb26cb47f8848843f454983e520908a35a69480de37aa122d2774cc09/merged
+    inodesUsed:
+      value: "28"
+    timestamp: "1608049185514235811"
+    usedBytes:
+      value: "2251"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 285fa97f
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: f41cbca3c37e93e0fb4f4f4f41249cf19dbe01a3f09c352f53d83797dc19eccf
+    labels:
+      io.kubernetes.container.name: openvswitch
+      io.kubernetes.pod.name: ovs-6fb8l
+      io.kubernetes.pod.namespace: openshift-sdn
+      io.kubernetes.pod.uid: 4cf01a04-7d2b-4792-aee4-87577f6844fd
+    metadata:
+      attempt: 0
+      name: openvswitch
+  cpu:
+    timestamp: "1608049185521940024"
+    usageCoreNanoSeconds:
+      value: "13571983267"
+  memory:
+    timestamp: "1608049185521940024"
+    workingSetBytes:
+      value: "4669440"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/757a0850ad23ca01eeb8d2942e6670051710993dd0448cc5d2a82f20eaff4b23/merged
+    inodesUsed:
+      value: "2"
+    timestamp: "1608049185521940024"
+    usedBytes:
+      value: "24"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: c85332b8
+      io.kubernetes.container.ports: '[{"name":"https","hostPort":9192,"containerPort":9192,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: f543cfc686b229e469c15ef97101fd8fe2ff9b1265d40e529fd32934d824f326
+    labels:
+      io.kubernetes.container.name: kube-rbac-proxy
+      io.kubernetes.pod.name: machine-approver-bdd875948-ms49q
+      io.kubernetes.pod.namespace: openshift-cluster-machine-approver
+      io.kubernetes.pod.uid: 80565f71-5772-487d-8c03-ec7813058fd2
+    metadata:
+      attempt: 0
+      name: kube-rbac-proxy
+  cpu:
+    timestamp: "1608049185522469906"
+    usageCoreNanoSeconds:
+      value: "317070190"
+  memory:
+    timestamp: "1608049185522469906"
+    workingSetBytes:
+      value: "16887808"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/423976c2c092d78a6ec214bf5e227f732dd023b2c3622ecae9bf9f9321af055f/merged
+    inodesUsed:
+      value: "5"
+    timestamp: "1608049185522469906"
+    usedBytes:
+      value: "90"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 6152cb4d
+      io.kubernetes.container.ports: '[{"containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "70"
+    id: f6e7599518f57e63a1362bc9cb504c50b8dc2b4e1a38ea67514b549aa30b84b9
+    labels:
+      io.kubernetes.container.name: oauth-apiserver
+      io.kubernetes.pod.name: apiserver-5df49ff8d7-jzbdh
+      io.kubernetes.pod.namespace: openshift-oauth-apiserver
+      io.kubernetes.pod.uid: bd0bcaeb-790b-4dc6-83fb-627d21a56abf
+    metadata:
+      attempt: 0
+      name: oauth-apiserver
+  cpu:
+    timestamp: "1608049185510317831"
+    usageCoreNanoSeconds:
+      value: "29170197593"
+  memory:
+    timestamp: "1608049185510317831"
+    workingSetBytes:
+      value: "62095360"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/98c2ada7fa11b87c5a663f2a4b1930083b668266807318bc02d3abb00eeeb6d8/merged
+    inodesUsed:
+      value: "9"
+    timestamp: "1608049185510317831"
+    usedBytes:
+      value: "189"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 6f6a0fe3
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":60000,"protocol":"TCP"},{"name":"healthz","containerPort":8080,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: f7aa52d8a0edcc4c332d47e4ff0b97a9b908afda2c907c1f54a22630d86c3246
+    labels:
+      io.kubernetes.container.name: marketplace-operator
+      io.kubernetes.pod.name: marketplace-operator-d8465b958-q87vj
+      io.kubernetes.pod.namespace: openshift-marketplace
+      io.kubernetes.pod.uid: 5c805382-2916-4607-9e56-992a811c4622
+    metadata:
+      attempt: 0
+      name: marketplace-operator
+  cpu:
+    timestamp: "1608049185494247515"
+    usageCoreNanoSeconds:
+      value: "16181866980"
+  memory:
+    timestamp: "1608049185494247515"
+    workingSetBytes:
+      value: "47292416"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/0ae29b28afe2b1766cad34ba2c66050156406e1f637c5d21b7651587442ec6de/merged
+    inodesUsed:
+      value: "1"
+    timestamp: "1608049185494247515"
+    usedBytes:
+      value: "6"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 9bdd7f0e
+      io.kubernetes.container.ports: '[{"containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: f9036c6aeeef80038df117c5f9929a8101b097cfb2b97cc7bd489b65c10d884c
+    labels:
+      io.kubernetes.container.name: controller-manager
+      io.kubernetes.pod.name: controller-manager-8d8g2
+      io.kubernetes.pod.namespace: openshift-controller-manager
+      io.kubernetes.pod.uid: 29ffd661-9daa-4fba-9dfc-55bfeda4b274
+    metadata:
+      attempt: 0
+      name: controller-manager
+  cpu:
+    timestamp: "1608049185500919211"
+    usageCoreNanoSeconds:
+      value: "22650611292"
+  memory:
+    timestamp: "1608049185500919211"
+    workingSetBytes:
+      value: "96178176"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/b2ea41842b5229c79f5de78b82bc414b925a1930f9d49c9d341ae4d30400e670/merged
+    inodesUsed:
+      value: "5"
+    timestamp: "1608049185500919211"
+    usedBytes:
+      value: "90"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: c44896cd
+      io.kubernetes.container.ports: '[{"hostPort":6443,"containerPort":6443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "1"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "135"
+    id: fa0bb54393a8ee1812b0fd37a2b2abc148bdc4cba32930c5e452d2ebd8f807c3
+    labels:
+      io.kubernetes.container.name: kube-apiserver
+      io.kubernetes.pod.name: kube-apiserver-crc-bslz4-master-0
+      io.kubernetes.pod.namespace: openshift-kube-apiserver
+      io.kubernetes.pod.uid: 932766fe-9c7e-45b5-9da0-c618a1947dee
+    metadata:
+      attempt: 1
+      name: kube-apiserver
+  cpu:
+    timestamp: "1608049185523886150"
+    usageCoreNanoSeconds:
+      value: "755069081334"
+  memory:
+    timestamp: "1608049185523886150"
+    workingSetBytes:
+      value: "1276813312"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/be5a930b43ea5fbfe4d7fa6ba438be5e79a2192ff390ecb14b67121fe1b3293d/merged
+    inodesUsed:
+      value: "15"
+    timestamp: "1608049185523886150"
+    usedBytes:
+      value: "216959"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: db5d3025
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":9393,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: File
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: fa1da6a2f1dcad62fe071296dc1dde926c5acbdc1640aa61cc36f728dbb8a443
+    labels:
+      io.kubernetes.container.name: kube-rbac-proxy
+      io.kubernetes.pod.name: ingress-operator-6b4d6848f5-wwnhj
+      io.kubernetes.pod.namespace: openshift-ingress-operator
+      io.kubernetes.pod.uid: f9e143dd-7157-4def-a402-8c9bb8e0d184
+    metadata:
+      attempt: 0
+      name: kube-rbac-proxy
+  cpu:
+    timestamp: "1608049185486361666"
+    usageCoreNanoSeconds:
+      value: "325663070"
+  memory:
+    timestamp: "1608049185486361666"
+    workingSetBytes:
+      value: "14163968"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/595f074b0e7324a1192c90b6b2e376368f81753d773373eb5e24048789592535/merged
+    inodesUsed:
+      value: "4"
+    timestamp: "1608049185486361666"
+    usedBytes:
+      value: "61"
+- attributes:
+    annotations:
+      io.kubernetes.container.hash: 200cb1f
+      io.kubernetes.container.ports: '[{"name":"metrics","containerPort":8443,"protocol":"TCP"}]'
+      io.kubernetes.container.restartCount: "0"
+      io.kubernetes.container.terminationMessagePath: /dev/termination-log
+      io.kubernetes.container.terminationMessagePolicy: FallbackToLogsOnError
+      io.kubernetes.pod.terminationGracePeriod: "30"
+    id: fb1f5e9d3f20ec0de96c51534463a85ade46f16af71057001948a6fdf0c70790
+    labels:
+      io.kubernetes.container.name: etcd-operator
+      io.kubernetes.pod.name: etcd-operator-758c4568cf-269kg
+      io.kubernetes.pod.namespace: openshift-etcd-operator
+      io.kubernetes.pod.uid: 86c52eb3-46c9-44f0-b1da-97e0f01fe77a
+    metadata:
+      attempt: 0
+      name: etcd-operator
+  cpu:
+    timestamp: "1608049185504039341"
+    usageCoreNanoSeconds:
+      value: "46659461188"
+  memory:
+    timestamp: "1608049185504039341"
+    workingSetBytes:
+      value: "75321344"
+  writableLayer:
+    fsId:
+      mountpoint: /var/lib/containers/storage/overlay/8d2d8f6c7236a6c034af3ae7fe14bff0df967ff3bec759d87614bb009877fca5/merged
+    inodesUsed:
+      value: "6"
+    timestamp: "1608049185504039341"
+    usedBytes:
+      value: "117"
+
