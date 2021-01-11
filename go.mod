@@ -1,4 +1,4 @@
-module monitools
+module github.com/jsliacan/monitools
 
 go 1.15
 

@@ -93,15 +93,15 @@ func RecordHostCPUUsage(filename string, reps int, nap int, c chan bool) {
 	c <- success
 }
 
-// GetCRIStatsFromVM returns the output of `sudo crictl stats -o yaml`
+// GetCRIStatsFromVM returns the output of `sudo crictl stats -o json`
 // from inside the CRC VM
-// destinationDir : location where dump YAML file will be saved
+// destinationDir : location where dump JSON file will be saved
 // c              : channel to report routines completion/error
 func GetCRIStatsFromVM(destinationDir string, c chan error) {
 
 	cmdCrictl := exec.Command("ssh", "-i", "~/.crc/machines/crc/id_ecdsa",
 		"core@192.168.130.11",
-		"sudo", "crictl", "stats", "-o", "yaml")
+		"sudo", "crictl", "stats", "-o", "json")
 	out, err := cmdCrictl.Output() // out is []byte
 	if err != nil {
 		log.Fatalf("could not capture output of the command: %s", cmdCrictl)
@@ -109,7 +109,7 @@ func GetCRIStatsFromVM(destinationDir string, c chan error) {
 
 	t := time.Now()
 	timestamp := t.Format("20060102150405")
-	filename := filepath.Join(destinationDir, "crictl-stats-"+timestamp+".yaml")
+	filename := filepath.Join(destinationDir, "crictl-stats-"+timestamp+".json")
 
 	f, err := os.Create(filename)
 	if err != nil {
