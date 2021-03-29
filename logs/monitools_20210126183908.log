@@ -1,0 +1,4 @@
+2021/01/26 18:39:08 going to record traffic going in/out of the VM
+2021/01/26 18:39:08 going to record CPU usage percentage attributed to qemu
+2021/01/26 18:49:08 recorded traffic (RX/TX) 120 times at 5 sec intervals
+2021/01/26 18:49:30 recorded CPU usage percentage 120 times at 5 sec intervals

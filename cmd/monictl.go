@@ -13,6 +13,17 @@ import (
 
 func main() {
 
+	// where to log
+	t := time.Now()
+	timestamp := t.Format("20060102150405")
+	logFilePath := filepath.Join("logs", "monitools_"+timestamp+".log")
+	logFile, err := os.OpenFile(logFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	if err != nil {
+		fmt.Printf("Could not open a file for logging: %v", err)
+	}
+	log.SetOutput(logFile)
+
+	// set up data folder
 	dirName := fmt.Sprintf("%s%s", "data_", time.Now().Format("2006-01-02"))
 	defaultDir := filepath.Join("data", dirName) // data/data_<date>
 
@@ -26,36 +37,23 @@ func main() {
 
 	flag.Parse()
 
-	// Required to push to Github code-ready/crc-data
-	//githubRepo := "crc-data"
-	//githubTokenLocation := os.Getenv("GITHUB_TOKEN_LOCATION")
-	//if githubTokenLocation == "" {
-	//	log.Println("Need to set GITHUB_TOKEN_LOCATION first")
-	//}
-	//githubOrg := "code-ready"
-	//githubUser := "Justin Case" // not sure if this is needed
-	//githubEmail := "jsliacan@redhat.com"
-
 	// Local information
 	//
 	if _, err := os.Stat(dirPath); os.IsNotExist(err) {
 		log.Fatalf("The directory you specified does not exist: %s", dirPath)
-		//err := os.Mkdir(dirPath, 0777)
-		//if err != nil {
-		//	log.Fatalf("%s", err)
-		//	os.Exit(1)
-		//}
 	}
 
 	// Let the user know about the settings they're using
-	log.Println("-------------")
-	log.Println("Running monitoring tools with the following settings:")
-	log.Printf("Data directory: %s\n", dirPath)
-	log.Printf("Number of repeats: %d\n", numRepeats)
-	log.Printf("Pauses between repeats: %ds\n", sleepLength)
-	log.Println("-------------")
+	fmt.Println("-------------")
+	fmt.Println("Running monitoring tools with the following settings:")
+	fmt.Printf("Data directory: %s\n", dirPath)
+	fmt.Printf("Number of repeats: %d\n", numRepeats)
+	fmt.Printf("Pauses between repeats: %ds\n", sleepLength)
+	fmt.Printf("Logging into: %s\n", logFilePath)
+	fmt.Println("-------------")
 
 	cpuChan := make(chan bool)
+	trafficChan := make(chan bool)
 	crioChan := make(chan error)
 
 	/*
@@ -75,8 +73,13 @@ func main() {
 	// start collecting
 	// ================
 
+	// transmitted/received MiB on crc interface
+	trafficFile := filepath.Join(dirPath, "traffic.json")
+	go tools.RecordTraffic(trafficFile, numRepeats, sleepLength, trafficChan)
+	log.Println("going to record traffic going in/out of the VM")
+
 	// CPU usage by 'qemu' process
-	cpuFile := filepath.Join(dirPath, "cpu.csv")
+	cpuFile := filepath.Join(dirPath, "cpu.json")
 	go tools.RecordHostCPUUsage(cpuFile, numRepeats, sleepLength, cpuChan)
 	log.Println("going to record CPU usage percentage attributed to qemu")
 
@@ -87,6 +90,12 @@ func main() {
 	// ================
 	// done collecting
 	// ================
+
+	if <-trafficChan != true {
+		log.Fatalf("failed to record traffic flow")
+	} else {
+		log.Printf("recorded traffic (RX/TX) %d times at %d sec intervals", numRepeats, sleepLength)
+	}
 
 	if <-cpuChan != true {
 		log.Fatalf("failed to record CPU percentage")
@@ -99,13 +108,6 @@ func main() {
 	} else {
 		log.Println("crictl stats successfully retrieved")
 	}
-
-	/*
-		err := tools.PushTodaysData(dirPath, githubRepo, githubTokenLocation, githubOrg, githubUser, githubEmail)
-		if err != nil {
-			fmt.Println(err)
-		}
-	*/
 
 	/*
 		// stop & delete & clean up
