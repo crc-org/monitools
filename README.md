@@ -37,18 +37,17 @@ Assuming a running CRC instance:
 $ make install
 $ mkdir data
 $ monictl -d=data -n=5 -s=1
-2021/01/11 14:19:20 -------------
-2021/01/11 14:19:20 Running monitoring tools with the following settings:
-2021/01/11 14:19:20 Data directory: data
-2021/01/11 14:19:20 Number of repeats: 5
-2021/01/11 14:19:20 Pauses between repeats: 1s
-2021/01/11 14:19:20 -------------
-2021/01/11 14:19:20 going to record CPU usage percentage attributed to qemu
-2021/01/11 14:19:20 going to retrieve crictl stats from the CRC VM
-2021/01/11 14:19:26 recorded CPU usage percentage 5 times at 1 sec intervals
-2021/01/11 14:19:26 crictl stats successfully retrieved
+-------------
+Running monitoring tools with the following settings:
+Data directory: data
+Number of repeats: 5
+Pauses between repeats: 1s
+Logging into: logs/monitools_20210329101528.log
+-------------
 $ ls data
-cpu.csv  crictl-stats-20210111150132.json
+cpu.json  crictl-stats-20210329101533.json  traffic.json
+$ ls logs
+monitools_20210329101528.log
 ```
 
 ## 'Import into your code' usecase
