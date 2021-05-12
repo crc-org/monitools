@@ -16,6 +16,9 @@ func main() {
 	// where to log
 	t := time.Now()
 	timestamp := t.Format("20060102150405")
+	if err := os.MkdirAll("logs", 0766); err != nil {
+		log.Fatal("Unable to create logs directory")
+	}
 	logFilePath := filepath.Join("logs", "monitools_"+timestamp+".log")
 	logFile, err := os.OpenFile(logFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
