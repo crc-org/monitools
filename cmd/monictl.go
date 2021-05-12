@@ -42,8 +42,8 @@ func main() {
 
 	// Local information
 	//
-	if _, err := os.Stat(dirPath); os.IsNotExist(err) {
-		log.Fatalf("The directory you specified does not exist: %s", dirPath)
+	if err := os.MkdirAll(dirPath, 0755); err != nil {
+		log.Fatalf("Unable to create directory: %s", dirPath)
 	}
 
 	// Let the user know about the settings they're using
