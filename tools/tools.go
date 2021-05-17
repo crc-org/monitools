@@ -84,7 +84,7 @@ func RecordTraffic(filename string, reps int, nap int, c chan bool) {
 		cmdTop := exec.Command("ifconfig", "crc")
 		out, err := cmdTop.Output()
 		if err != nil {
-			log.Fatalf("could not capture output of the `top` command")
+			log.Println("could not capture output of the `top` command")
 			success = false
 		}
 		// process output
@@ -110,7 +110,7 @@ func RecordTraffic(filename string, reps int, nap int, c chan bool) {
 	// create CSV file and write data to it
 	f, err := os.Create(filename)
 	if err != nil {
-		log.Fatalf("could not create %s err: %s", filename, err)
+		log.Printf("could not create %s err: %s", filename, err)
 		success = false
 	}
 	defer f.Close()
@@ -118,7 +118,7 @@ func RecordTraffic(filename string, reps int, nap int, c chan bool) {
 	jsonRxTx, _ := json.MarshalIndent(rxtxData, "", " ")
 	err = ioutil.WriteFile(filename, jsonRxTx, 0644)
 	if err != nil {
-		log.Fatalf("Could not write data to %s", filename)
+		log.Printf("Could not write data to %s", filename)
 		success = false
 	}
 
@@ -164,7 +164,8 @@ func RunCRCCommand(cmdArgs []string) error {
 	completeCommand := exec.Command("crc", cmdArgs...)
 	_, err := completeCommand.Output()
 	if err != nil {
-		log.Fatalf("could not successfully run the command: %s\n err: %s", completeCommand, err)
+		log.Printf("could not successfully run the command: %s\n err: %s", completeCommand, err)
+		return err
 	}
 
 	return err
