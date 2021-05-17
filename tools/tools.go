@@ -2,12 +2,12 @@ package tools
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
-	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -71,39 +71,29 @@ func RecordHostCPUUsage(filename string, reps int, nap int, c chan bool) {
 // nap      : sleep between the reps
 // c        : channel used to report back to the main process
 func RecordTraffic(filename string, reps int, nap int, c chan bool) {
-
 	napLength := time.Duration(nap)
 	success := true
-	reTX := regexp.MustCompile(`TX.*\((\d+.\d+) MiB\)`) // extract num of MiB transmitted
-	reRX := regexp.MustCompile(`RX.*\((\d+.\d+) MiB\)`) // extract num of MiB received
 
 	// collect data
-	var rxtxData [][]float64
+	var rxtxData [][]string
+	ifFace := "crc"
 	for i := 0; i < reps; i++ {
 		// get qemu's line, static output, only once
-		cmdTop := exec.Command("ifconfig", "crc")
-		out, err := cmdTop.Output()
+		rxFileName :=  fmt.Sprintf("/sys/class/net/%s/statistics/rx_bytes", ifFace)
+		rx, err := ioutil.ReadFile(rxFileName)
 		if err != nil {
-			log.Println("could not capture output of the `top` command")
+			log.Printf("Not able to read %s", rxFileName)
 			success = false
 		}
-		// process output
-		var rx, tx float64
-		match := reTX.FindStringSubmatch(string(out))
-		if match != nil {
-			tx, err = strconv.ParseFloat(match[1], 64)
-			if err != nil {
-				log.Printf("Could not parse TX")
-			}
+
+		txFileName :=  fmt.Sprintf("/sys/class/net/%s/statistics/tx_bytes", ifFace)
+		tx, err := ioutil.ReadFile(txFileName)
+		if err != nil {
+			log.Printf("Not able to read %s", txFileName)
+			success = false
 		}
-		match = reRX.FindStringSubmatch(string(out))
-		if match != nil {
-			rx, err = strconv.ParseFloat(match[1], 64)
-			if err != nil {
-				log.Printf("Could not parse RX")
-			}
-		}
-		rxtxData = append(rxtxData, []float64{rx, tx})
+
+		rxtxData = append(rxtxData, []string{strings.TrimSpace(string(rx)), strings.TrimSpace(string(tx))})
 		time.Sleep(napLength * time.Second)
 	}
 
