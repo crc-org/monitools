@@ -24,41 +24,43 @@ func RecordHostCPUUsage(filename string, reps int, nap int, c chan bool) {
 	napLength := time.Duration(nap)
 	success := true
 
-	// collect data
-	cpuData := make([]float64, reps) // can't initialize array of length calculated at runtime :(
-	for i := 0; i < reps; i++ {
-		// get qemu's line, static output, only once
-		cmdTop := exec.Command("top", "-bn1", "-u", "qemu")
-		out, err := cmdTop.Output()
-		strout := string(out)
-		if err != nil {
-			log.Printf("could not capture output of the `top` command")
-			success = false
-			cpuData[i] = -1.0
-		} else if !strings.Contains(strout, "qemu") {
-			log.Printf("there is no `qemu` process")
-			cpuData[i] = -2.0
-		} else {
+	qemuPidByte, err := exec.Command("ps", "-g", "qemu", "-o", "pid=").Output()
+	if err != nil {
+		log.Printf("Not able to get qemu process pid")
+		success = false
+	}
+	// Remove new line from the output
+	qemuPid := strings.TrimSpace(string(qemuPidByte))
+	if qemuPid != "" {
+		// collect data
+		cpuData := make([]float64, reps) // can't initialize array of length calculated at runtime :(
+		for i := 0; i < reps; i++ {
+			// get qemu's line, static output, only once
+			out, err := exec.Command("top", "-bn1", "-p", qemuPid).Output()
+			if err != nil {
+				log.Println(err)
+			}
 			outTail := strings.Split(string(out), "qemu")[1]
+			fmt.Println(outTail)
 			cpu, _ := strconv.ParseFloat(strings.Fields(outTail)[6], 64)
 			cpuData[i] = cpu
+			time.Sleep(napLength * time.Second)
 		}
-		time.Sleep(napLength * time.Second)
-	}
 
-	// create CSV file and write data to it
-	f, err := os.Create(filename)
-	if err != nil {
-		log.Printf("could not create %s err: %s", filename, err)
-		success = false
-	}
-	defer f.Close()
+		// create CSV file and write data to it
+		f, err := os.Create(filename)
+		if err != nil {
+			log.Printf("could not create %s err: %s", filename, err)
+			success = false
+		}
+		defer f.Close()
 
-	jsonCPU, _ := json.MarshalIndent(cpuData, "", " ")
-	err = ioutil.WriteFile(filename, jsonCPU, 0644)
-	if err != nil {
-		log.Printf("Could not write data to %s", filename)
-		success = false
+		jsonCPU, _ := json.MarshalIndent(cpuData, "", " ")
+		err = ioutil.WriteFile(filename, jsonCPU, 0644)
+		if err != nil {
+			log.Printf("Could not write data to %s", filename)
+			success = false
+		}
 	}
 
 	c <- success
