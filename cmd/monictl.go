@@ -55,8 +55,8 @@ func main() {
 	fmt.Printf("Logging into: %s\n", logFilePath)
 	fmt.Println("-------------")
 
-	cpuChan := make(chan bool)
-	trafficChan := make(chan bool)
+	cpuChan := make(chan error)
+	trafficChan := make(chan error)
 	crioChan := make(chan error)
 
 	/*
@@ -94,14 +94,14 @@ func main() {
 	// done collecting
 	// ================
 
-	if <-trafficChan != true {
-		log.Fatalf("failed to record traffic flow")
+	if err := <-trafficChan; err != nil {
+		log.Fatalf("failed to record traffic flow %s", err)
 	} else {
 		log.Printf("recorded traffic (RX/TX) %d times at %d sec intervals", numRepeats, sleepLength)
 	}
 
-	if <-cpuChan != true {
-		log.Fatalf("failed to record CPU percentage")
+	if err := <-cpuChan; err != nil {
+		log.Fatalf("failed to record CPU percentage %s", err)
 	} else {
 		log.Printf("recorded CPU usage percentage %d times at %d sec intervals", numRepeats, sleepLength)
 	}

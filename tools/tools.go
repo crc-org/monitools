@@ -18,16 +18,17 @@ import (
 // filename : relative location of file to write into
 // reps     : number of times to record CPU usage
 // nap      : sleep between the reps
-// c        : channel used to report back to the main process
-func RecordHostCPUUsage(filename string, reps int, nap int, c chan bool) {
+// c        : channel used to report back to the main proces
+func RecordHostCPUUsage(filename string, reps int, nap int, c chan error) {
+	c <- recordHostCPUUsage(filename, reps, nap)
+}
 
+func recordHostCPUUsage(filename string, reps int, nap int) error {
 	napLength := time.Duration(nap)
-	success := true
 
 	qemuPidByte, err := exec.Command("ps", "-g", "qemu", "-o", "pid=").Output()
 	if err != nil {
-		log.Printf("Not able to get qemu process pid")
-		success = false
+		return err
 	}
 	// Remove new line from the output
 	qemuPid := strings.TrimSpace(string(qemuPidByte))
@@ -38,10 +39,9 @@ func RecordHostCPUUsage(filename string, reps int, nap int, c chan bool) {
 			// get qemu's line, static output, only once
 			out, err := exec.Command("top", "-bn1", "-p", qemuPid).Output()
 			if err != nil {
-				log.Println(err)
+				return err
 			}
 			outTail := strings.Split(string(out), "qemu")[1]
-			fmt.Println(outTail)
 			cpu, _ := strconv.ParseFloat(strings.Fields(outTail)[6], 64)
 			cpuData[i] = cpu
 			time.Sleep(napLength * time.Second)
@@ -50,20 +50,17 @@ func RecordHostCPUUsage(filename string, reps int, nap int, c chan bool) {
 		// create CSV file and write data to it
 		f, err := os.Create(filename)
 		if err != nil {
-			log.Printf("could not create %s err: %s", filename, err)
-			success = false
+			return err
 		}
 		defer f.Close()
 
 		jsonCPU, _ := json.MarshalIndent(cpuData, "", " ")
 		err = ioutil.WriteFile(filename, jsonCPU, 0644)
 		if err != nil {
-			log.Printf("Could not write data to %s", filename)
-			success = false
+			return err
 		}
 	}
-
-	c <- success
+	return fmt.Errorf("This is error")
 }
 
 // RecordTraffic returns a list of n cpu usage stats
@@ -72,9 +69,12 @@ func RecordHostCPUUsage(filename string, reps int, nap int, c chan bool) {
 // reps     : number of times to record CPU usage
 // nap      : sleep between the reps
 // c        : channel used to report back to the main process
-func RecordTraffic(filename string, reps int, nap int, c chan bool) {
+func RecordTraffic(filename string, reps int, nap int, c chan error) {
+	c <- recordTraffic(filename, reps, nap)
+}
+
+func recordTraffic(filename string, reps int, nap int) error {
 	napLength := time.Duration(nap)
-	success := true
 
 	// collect data
 	var rxtxData [][]string
@@ -84,15 +84,13 @@ func RecordTraffic(filename string, reps int, nap int, c chan bool) {
 		rxFileName :=  fmt.Sprintf("/sys/class/net/%s/statistics/rx_bytes", ifFace)
 		rx, err := ioutil.ReadFile(rxFileName)
 		if err != nil {
-			log.Printf("Not able to read %s", rxFileName)
-			success = false
+			fmt.Errorf("Not able to read %s", rxFileName)
 		}
 
 		txFileName :=  fmt.Sprintf("/sys/class/net/%s/statistics/tx_bytes", ifFace)
 		tx, err := ioutil.ReadFile(txFileName)
 		if err != nil {
-			log.Printf("Not able to read %s", txFileName)
-			success = false
+			fmt.Errorf("Not able to read %s", txFileName)
 		}
 
 		rxtxData = append(rxtxData, []string{strings.TrimSpace(string(rx)), strings.TrimSpace(string(tx))})
@@ -102,19 +100,16 @@ func RecordTraffic(filename string, reps int, nap int, c chan bool) {
 	// create CSV file and write data to it
 	f, err := os.Create(filename)
 	if err != nil {
-		log.Printf("could not create %s err: %s", filename, err)
-		success = false
+		fmt.Errorf("could not create %s err: %s", filename, err)
 	}
 	defer f.Close()
 
 	jsonRxTx, _ := json.MarshalIndent(rxtxData, "", " ")
 	err = ioutil.WriteFile(filename, jsonRxTx, 0644)
 	if err != nil {
-		log.Printf("Could not write data to %s", filename)
-		success = false
+		fmt.Errorf("Could not write data to %s", filename)
 	}
-
-	c <- success
+	return nil
 }
 
 // GetCRIStatsFromVM returns the output of `sudo crictl stats -o json`
@@ -122,9 +117,12 @@ func RecordTraffic(filename string, reps int, nap int, c chan bool) {
 // destinationDir : location where dump JSON file will be saved
 // c              : channel to report routines completion/error
 func GetCRIStatsFromVM(destinationDir string, c chan error) {
+	c <- getCRIStatsFromVM(destinationDir)
+}
 
+func getCRIStatsFromVM(destinationDir string) error {
 	cmdCrictl := exec.Command("ssh", "-i", "~/.crc/machines/crc/id_ecdsa",
-		"core@192.168.130.11",
+		"-o StrictHostKeyChecking=no", "-o UserKnownHostsFile=/dev/null", "core@192.168.130.11",
 		"sudo", "crictl", "stats", "-o", "json")
 	out, err := cmdCrictl.Output() // out is []byte
 	if err != nil {
@@ -137,17 +135,15 @@ func GetCRIStatsFromVM(destinationDir string, c chan error) {
 
 	f, err := os.Create(filename)
 	if err != nil {
-		log.Printf("could not create %s err: %s", filename, err)
+		fmt.Errorf("could not create %s err: %s", filename, err)
 	}
 	defer f.Close()
 
 	_, err = f.Write(out)
 	if err != nil {
-		log.Printf("could not write to %s err: %s", filename, err)
+		fmt.Errorf("could not write to %s err: %s", filename, err)
 	}
-	f.Sync()
-
-	c <- err
+	return f.Sync()
 }
 
 // RunCRCCommand runs a CRC command with args
