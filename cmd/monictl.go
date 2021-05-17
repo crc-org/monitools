@@ -16,6 +16,9 @@ func main() {
 	// where to log
 	t := time.Now()
 	timestamp := t.Format("20060102150405")
+	if err := os.MkdirAll("logs", 0766); err != nil {
+		log.Fatal("Unable to create logs directory")
+	}
 	logFilePath := filepath.Join("logs", "monitools_"+timestamp+".log")
 	logFile, err := os.OpenFile(logFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
@@ -24,7 +27,7 @@ func main() {
 	log.SetOutput(logFile)
 
 	// set up data folder
-	dirName := fmt.Sprintf("%s%s", "data_", time.Now().Format("2006-01-02"))
+	dirName := fmt.Sprintf("data_%s" , time.Now().Format("2006-01-02"))
 	defaultDir := filepath.Join("data", dirName) // data/data_<date>
 
 	// Command line flags
@@ -39,8 +42,8 @@ func main() {
 
 	// Local information
 	//
-	if _, err := os.Stat(dirPath); os.IsNotExist(err) {
-		log.Fatalf("The directory you specified does not exist: %s", dirPath)
+	if err := os.MkdirAll(dirPath, 0755); err != nil {
+		log.Fatalf("Unable to create directory: %s", dirPath)
 	}
 
 	// Let the user know about the settings they're using
@@ -52,8 +55,8 @@ func main() {
 	fmt.Printf("Logging into: %s\n", logFilePath)
 	fmt.Println("-------------")
 
-	cpuChan := make(chan bool)
-	trafficChan := make(chan bool)
+	cpuChan := make(chan error)
+	trafficChan := make(chan error)
 	crioChan := make(chan error)
 
 	/*
@@ -91,14 +94,14 @@ func main() {
 	// done collecting
 	// ================
 
-	if <-trafficChan != true {
-		log.Fatalf("failed to record traffic flow")
+	if err := <-trafficChan; err != nil {
+		log.Fatalf("failed to record traffic flow %s", err)
 	} else {
 		log.Printf("recorded traffic (RX/TX) %d times at %d sec intervals", numRepeats, sleepLength)
 	}
 
-	if <-cpuChan != true {
-		log.Fatalf("failed to record CPU percentage")
+	if err := <-cpuChan; err != nil {
+		log.Fatalf("failed to record CPU percentage %s", err)
 	} else {
 		log.Printf("recorded CPU usage percentage %d times at %d sec intervals", numRepeats, sleepLength)
 	}
