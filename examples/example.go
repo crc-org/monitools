@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/jsliacan/monitools/tools"
+	"github.com/code-ready/monitools/tools"
 )
 
 // Run a function from monitools/tools and observe

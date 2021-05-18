@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/jsliacan/monitools/tools" // local tools package
+	"github.com/code-ready/monitools/tools" // local tools package
 )
 
 func main() {

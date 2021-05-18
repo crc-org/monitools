@@ -7,7 +7,7 @@ Gather resource consumption data around a CodeReady Containers instance
 
 ### Install
 
-Clone this repository by `gith clone https://github.com/jsliacan/monitools` and the following command will build the `monictl` executable and place it in `$(GOBIN)` directory.
+Clone this repository by `gith clone https://github.com/code-ready/monitools` and the following command will build the `monictl` executable and place it in `$(GOBIN)` directory.
 
 ``` bash
 make install
@@ -55,13 +55,13 @@ monitools_20210329101528.log
 First, install this module to your development environment using e.g. `go get` tool:
 
 ``` bash
-go get github.com/jsliacan/monitools
+go get github.com/code-ready/monitools
 ```
 
 Then use as any other package, e.g. by importing as:
 
 ``` bash
-import github.com/jsliacan/monitools/tools
+import github.com/code-ready/monitools/tools
 ```
 ### Example
 
