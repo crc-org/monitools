@@ -46,6 +46,11 @@ func main() {
 		log.Fatalf("Unable to create directory: %s", dirPath)
 	}
 
+	if !tools.IsCRCRunning() {
+		fmt.Println("CRC VM is not running")
+		os.Exit(1)
+	}
+
 	// Let the user know about the settings they're using
 	fmt.Println("-------------")
 	fmt.Println("Running monitoring tools with the following settings:")

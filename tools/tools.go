@@ -145,3 +145,14 @@ func getCRIStatsFromVM(destinationDir string) error {
 	}
 	return f.Sync()
 }
+
+func IsCRCRunning() bool {
+	out, err := exec.Command("virsh", "-c", "qemu:///system", "domstate", "crc").Output()
+	if err != nil {
+		return false
+	}
+	if strings.TrimSpace(string(out)) != "running" {
+		return false
+	}
+	return true
+}
