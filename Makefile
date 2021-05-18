@@ -20,3 +20,6 @@ cross:
 	GOOS=darwin go build -o bin/darwin/monictl cmd/monictl.go
 	GOOS=linux go build -o bin/linux/monictl cmd/monictl.go
 	GOOS=windows go build -o bin/windows/monictl.exe cmd/monictl.go
+.PHONY: fmt
+fmt:
+	go fmt ./...

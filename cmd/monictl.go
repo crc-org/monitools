@@ -27,7 +27,7 @@ func main() {
 	log.SetOutput(logFile)
 
 	// set up data folder
-	dirName := fmt.Sprintf("data_%s" , time.Now().Format("2006-01-02"))
+	dirName := fmt.Sprintf("data_%s", time.Now().Format("2006-01-02"))
 	defaultDir := filepath.Join("data", dirName) // data/data_<date>
 
 	// Command line flags

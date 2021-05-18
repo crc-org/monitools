@@ -81,13 +81,13 @@ func recordTraffic(filename string, reps int, nap int) error {
 	ifFace := "crc"
 	for i := 0; i < reps; i++ {
 		// get qemu's line, static output, only once
-		rxFileName :=  fmt.Sprintf("/sys/class/net/%s/statistics/rx_bytes", ifFace)
+		rxFileName := fmt.Sprintf("/sys/class/net/%s/statistics/rx_bytes", ifFace)
 		rx, err := ioutil.ReadFile(rxFileName)
 		if err != nil {
 			fmt.Errorf("Not able to read %s", rxFileName)
 		}
 
-		txFileName :=  fmt.Sprintf("/sys/class/net/%s/statistics/tx_bytes", ifFace)
+		txFileName := fmt.Sprintf("/sys/class/net/%s/statistics/tx_bytes", ifFace)
 		tx, err := ioutil.ReadFile(txFileName)
 		if err != nil {
 			fmt.Errorf("Not able to read %s", txFileName)
