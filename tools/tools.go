@@ -60,7 +60,7 @@ func recordHostCPUUsage(filename string, reps int, nap int) error {
 			return err
 		}
 	}
-	return fmt.Errorf("This is error")
+	return nil
 }
 
 // RecordTraffic returns a list of n cpu usage stats
