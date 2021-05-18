@@ -59,19 +59,6 @@ func main() {
 	trafficChan := make(chan error)
 	crioChan := make(chan error)
 
-	/*
-		// setup & start
-		err := tools.RunCRCCommand([]string{"setup"})
-		if err != nil {
-			os.Exit(1)
-		}
-
-		err = tools.RunCRCCommand([]string{"start"})
-		if err != nil {
-			os.Exit(1)
-		}
-	*/
-
 	// ================
 	// start collecting
 	// ================
@@ -111,22 +98,4 @@ func main() {
 	} else {
 		log.Println("crictl stats successfully retrieved")
 	}
-
-	/*
-		// stop & delete & clean up
-		err = tools.RunCRCCommand([]string{"stop", "-f"})
-		if err != nil {
-			os.Exit(1)
-		}
-
-		err = tools.RunCRCCommand([]string{"delete", "-f"})
-		if err != nil {
-			os.Exit(1)
-		}
-
-		err = tools.RunCRCCommand([]string{"cleanup"})
-		if err != nil {
-			os.Exit(1)
-		}
-	*/
 }

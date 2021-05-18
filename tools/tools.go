@@ -145,16 +145,3 @@ func getCRIStatsFromVM(destinationDir string) error {
 	}
 	return f.Sync()
 }
-
-// RunCRCCommand runs a CRC command with args
-func RunCRCCommand(cmdArgs []string) error {
-
-	completeCommand := exec.Command("crc", cmdArgs...)
-	_, err := completeCommand.Output()
-	if err != nil {
-		log.Printf("could not successfully run the command: %s\n err: %s", completeCommand, err)
-		return err
-	}
-
-	return err
-}
