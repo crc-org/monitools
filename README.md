@@ -3,6 +3,12 @@ monitools
 
 Gather resource consumption data around a CodeReady Containers instance
   
+## Container
+
+The following diagram represent the interaction of monitools container with a host running the CodeReady Containers instance.
+
+![Overview](docs/overview.jpg?raw=true)
+
 ## Standalone tool
 
 ### Install
