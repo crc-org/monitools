@@ -60,7 +60,7 @@ func recordHostCPUUsage(filename string, reps int, nap int) error {
 			return err
 		}
 	}
-	return fmt.Errorf("This is error")
+	return nil
 }
 
 // RecordTraffic returns a list of n cpu usage stats
@@ -81,13 +81,13 @@ func recordTraffic(filename string, reps int, nap int) error {
 	ifFace := "crc"
 	for i := 0; i < reps; i++ {
 		// get qemu's line, static output, only once
-		rxFileName :=  fmt.Sprintf("/sys/class/net/%s/statistics/rx_bytes", ifFace)
+		rxFileName := fmt.Sprintf("/sys/class/net/%s/statistics/rx_bytes", ifFace)
 		rx, err := ioutil.ReadFile(rxFileName)
 		if err != nil {
 			fmt.Errorf("Not able to read %s", rxFileName)
 		}
 
-		txFileName :=  fmt.Sprintf("/sys/class/net/%s/statistics/tx_bytes", ifFace)
+		txFileName := fmt.Sprintf("/sys/class/net/%s/statistics/tx_bytes", ifFace)
 		tx, err := ioutil.ReadFile(txFileName)
 		if err != nil {
 			fmt.Errorf("Not able to read %s", txFileName)
@@ -146,15 +146,13 @@ func getCRIStatsFromVM(destinationDir string) error {
 	return f.Sync()
 }
 
-// RunCRCCommand runs a CRC command with args
-func RunCRCCommand(cmdArgs []string) error {
-
-	completeCommand := exec.Command("crc", cmdArgs...)
-	_, err := completeCommand.Output()
+func IsCRCRunning() bool {
+	out, err := exec.Command("virsh", "-c", "qemu:///system", "domstate", "crc").Output()
 	if err != nil {
-		log.Printf("could not successfully run the command: %s\n err: %s", completeCommand, err)
-		return err
+		return false
 	}
-
-	return err
+	if strings.TrimSpace(string(out)) != "running" {
+		return false
+	}
+	return true
 }

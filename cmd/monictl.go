@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/jsliacan/monitools/tools" // local tools package
+	"github.com/code-ready/monitools/tools" // local tools package
 )
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
 	log.SetOutput(logFile)
 
 	// set up data folder
-	dirName := fmt.Sprintf("data_%s" , time.Now().Format("2006-01-02"))
+	dirName := fmt.Sprintf("data_%s", time.Now().Format("2006-01-02"))
 	defaultDir := filepath.Join("data", dirName) // data/data_<date>
 
 	// Command line flags
@@ -46,6 +46,11 @@ func main() {
 		log.Fatalf("Unable to create directory: %s", dirPath)
 	}
 
+	if !tools.IsCRCRunning() {
+		fmt.Println("CRC VM is not running")
+		os.Exit(1)
+	}
+
 	// Let the user know about the settings they're using
 	fmt.Println("-------------")
 	fmt.Println("Running monitoring tools with the following settings:")
@@ -58,19 +63,6 @@ func main() {
 	cpuChan := make(chan error)
 	trafficChan := make(chan error)
 	crioChan := make(chan error)
-
-	/*
-		// setup & start
-		err := tools.RunCRCCommand([]string{"setup"})
-		if err != nil {
-			os.Exit(1)
-		}
-
-		err = tools.RunCRCCommand([]string{"start"})
-		if err != nil {
-			os.Exit(1)
-		}
-	*/
 
 	// ================
 	// start collecting
@@ -111,22 +103,4 @@ func main() {
 	} else {
 		log.Println("crictl stats successfully retrieved")
 	}
-
-	/*
-		// stop & delete & clean up
-		err = tools.RunCRCCommand([]string{"stop", "-f"})
-		if err != nil {
-			os.Exit(1)
-		}
-
-		err = tools.RunCRCCommand([]string{"delete", "-f"})
-		if err != nil {
-			os.Exit(1)
-		}
-
-		err = tools.RunCRCCommand([]string{"cleanup"})
-		if err != nil {
-			os.Exit(1)
-		}
-	*/
 }

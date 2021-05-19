@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/jsliacan/monitools/tools"
+	"github.com/code-ready/monitools/tools"
 )
 
 // Run a function from monitools/tools and observe
@@ -11,11 +11,11 @@ import (
 // 5 seconds
 func main() {
 
-	cpuChan := make(chan bool)
+	cpuChan := make(chan error)
 
 	go tools.RecordHostCPUUsage("cpu.csv", 5, 1, cpuChan)
 
-	if <-cpuChan != true {
+	if <-cpuChan != nil {
 		log.Fatalf("failed to record CPU percentage")
 	}
 }
