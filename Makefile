@@ -1,5 +1,9 @@
 SHELL := /bin/bash
 GOOS := $(shell go env GOOS)
+CONTAINER_RUNTIME ?= podman
+VERSION ?= 0.0.1
+# Image URL to use all building/pushing image targets
+IMG ?= quay.io/crc/monitools:v${VERSION}
 
 # place binary in ./bin
 build:
@@ -20,9 +24,15 @@ cross:
 	GOOS=darwin go build -o bin/darwin/monictl cmd/monictl.go
 	GOOS=linux go build -o bin/linux/monictl cmd/monictl.go
 	GOOS=windows go build -o bin/windows/monictl.exe cmd/monictl.go
+
 .PHONY: fmt
 fmt:
 	go fmt ./...
 .PHONY: tidy
 tidy:
 	go mod tidy
+
+# Build the container image
+.PHONY: container-build
+container-build: 
+	${CONTAINER_RUNTIME} build -t ${IMG} -f images/build/Dockerfile .
