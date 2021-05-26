@@ -1,6 +1,7 @@
 package tools
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -11,14 +12,21 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	corev1 "k8s.io/api/core/v1"
+	"k8s.io/apimachinery/pkg/api/resource"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/util/homedir"
 )
 
 // RecordHostCPUUsage returns a list of n cpu usage stats
-// (in %) taken with nap breaks inbetween each poll
+// (in %) taken with nap breaks in between each poll
 // filename : relative location of file to write into
 // reps     : number of times to record CPU usage
 // nap      : sleep between the reps
-// c        : channel used to report back to the main proces
+// c        : channel used to report back to the main process
 func RecordHostCPUUsage(filename string, reps int, nap int, c chan error) {
 	c <- recordHostCPUUsage(filename, reps, nap)
 }
@@ -64,7 +72,7 @@ func recordHostCPUUsage(filename string, reps int, nap int) error {
 }
 
 // RecordTraffic returns a list of n cpu usage stats
-// (in %) taken with nap breaks inbetween each poll
+// (in %) taken with nap breaks in between each poll
 // filename : relative location of file to write into
 // reps     : number of times to record CPU usage
 // nap      : sleep between the reps
@@ -155,4 +163,98 @@ func IsCRCRunning() bool {
 		return false
 	}
 	return true
+}
+
+func GetNodeResource(path string, c chan error) {
+	c <- parseNodeDescribeToJSON(path)
+}
+
+// declaring a struct
+type NodeDescribe struct {
+	// defining struct variables
+	Capacity           corev1.ResourceList   `json:"capacity"`
+	Allocatable        corev1.ResourceList   `json:"allocatable"`
+	NodeInfo           corev1.NodeSystemInfo `json:"nodeInfo"`
+	NonTerminatedPods  []PodInfo             `json:"nonTerminatedPods"`
+	AllocatedResources []Resource            `json:"allocatedResources"`
+}
+
+type PodInfo struct {
+	Namespace      string `json:"namespace"`
+	Name           string `json:"name"`
+	CPURequests    string `json:"cpuRequests"`
+	MemoryRequests string `json:"memoryRequests"`
+}
+
+type Resource struct {
+	Name     string `json:"name"`
+	Requests string `json:"requests"`
+}
+
+func parseNodeDescribeToJSON(path string) error {
+	var nodeDescribe NodeDescribe
+	kubeconfig := filepath.Join(homedir.HomeDir(), ".crc", "machines", "crc", "kubeconfig")
+
+	config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		return err
+	}
+	clientset, err := kubernetes.NewForConfig(config)
+	if err != nil {
+		return err
+	}
+
+	pods, err := clientset.CoreV1().Pods("").List(context.TODO(), metav1.ListOptions{})
+	if err != nil {
+		return err
+	}
+
+	var totalCPU, totalMem resource.Quantity
+	for _, pod := range pods.Items {
+		if pod.Status.Phase == corev1.PodRunning {
+			var cpu, mem resource.Quantity
+			for _, container := range pod.Spec.Containers {
+				cpu.Add(*container.Resources.Requests.Cpu())
+				mem.Add(*container.Resources.Requests.Memory())
+			}
+			p := PodInfo{Namespace: pod.Namespace,
+				Name:           pod.Name,
+				CPURequests:    cpu.String(),
+				MemoryRequests: mem.String(),
+			}
+			nodeDescribe.NonTerminatedPods = append(nodeDescribe.NonTerminatedPods, p)
+			totalCPU.Add(cpu)
+			totalMem.Add(mem)
+		}
+	}
+
+	nodes, err := clientset.CoreV1().Nodes().List(context.TODO(), metav1.ListOptions{})
+	if err != nil {
+		return err
+	}
+
+	for _, node := range nodes.Items {
+		nodeDescribe.Capacity = node.Status.Capacity
+		nodeDescribe.Allocatable = node.Status.Allocatable
+		nodeDescribe.NodeInfo = node.Status.NodeInfo
+		r := []Resource{
+			{
+				Name:     "cpu",
+				Requests: totalCPU.String(),
+			},
+			{
+				Name:     "memory",
+				Requests: totalMem.String(),
+			},
+		}
+		nodeDescribe.AllocatedResources = r
+	}
+
+	file, err := json.MarshalIndent(&nodeDescribe, "", " ")
+	if err != nil {
+		fmt.Printf("error marshalling json: %v", err)
+	}
+	_ = ioutil.WriteFile(path, file, 0644)
+
+	return nil
 }

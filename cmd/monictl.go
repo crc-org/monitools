@@ -63,6 +63,7 @@ func main() {
 	cpuChan := make(chan error)
 	trafficChan := make(chan error)
 	crioChan := make(chan error)
+	nodeDesChan := make(chan error)
 
 	// ================
 	// start collecting
@@ -81,6 +82,10 @@ func main() {
 	// CRI-O stats as reported by 'crictl'
 	go tools.GetCRIStatsFromVM(dirPath, crioChan)
 	log.Println("going to retrieve crictl stats from the CRC VM")
+
+	// Node Description
+	nodeDescription := filepath.Join(dirPath, "node.json")
+	go tools.GetNodeResource(nodeDescription, nodeDesChan)
 
 	// ================
 	// done collecting
@@ -102,5 +107,11 @@ func main() {
 		log.Fatalf("could not retrieve crictl stats: %s", err)
 	} else {
 		log.Println("crictl stats successfully retrieved")
+	}
+
+	if err := <-nodeDesChan; err != nil {
+		log.Fatalf("could not retrieve node description stats: %s", err)
+	} else {
+		log.Println("node description successfully retrieved")
 	}
 }
