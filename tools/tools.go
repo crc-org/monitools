@@ -22,11 +22,11 @@ import (
 )
 
 // RecordHostCPUUsage returns a list of n cpu usage stats
-// (in %) taken with nap breaks inbetween each poll
+// (in %) taken with nap breaks in between each poll
 // filename : relative location of file to write into
 // reps     : number of times to record CPU usage
 // nap      : sleep between the reps
-// c        : channel used to report back to the main proces
+// c        : channel used to report back to the main process
 func RecordHostCPUUsage(filename string, reps int, nap int, c chan error) {
 	c <- recordHostCPUUsage(filename, reps, nap)
 }
@@ -72,7 +72,7 @@ func recordHostCPUUsage(filename string, reps int, nap int) error {
 }
 
 // RecordTraffic returns a list of n cpu usage stats
-// (in %) taken with nap breaks inbetween each poll
+// (in %) taken with nap breaks in between each poll
 // filename : relative location of file to write into
 // reps     : number of times to record CPU usage
 // nap      : sleep between the reps
