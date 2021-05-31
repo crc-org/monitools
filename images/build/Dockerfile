@@ -15,6 +15,7 @@ COPY --from=builder /workspace/bin/linux/monictl /workspace/images/build/entrypo
 ENV EPEL https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 RUN rpm -ivh ${EPEL} \ 
-    && microdnf --enablerepo=epel install -y openssh-clients sshpass
+    && microdnf --enablerepo=epel install -y openssh-clients sshpass \
+    && microdnf clean all
 
 ENTRYPOINT ["entrypoint.sh"]
