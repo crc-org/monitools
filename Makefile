@@ -3,7 +3,7 @@ GOOS := $(shell go env GOOS)
 CONTAINER_RUNTIME ?= podman
 VERSION ?= 0.0.1
 # Image URL to use all building/pushing image targets
-IMG ?= quay.io/crc/monitools:v${VERSION}
+IMG ?= quay.io/crcont/monitools:v${VERSION}
 
 # place binary in ./bin
 build:
