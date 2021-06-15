@@ -10,9 +10,12 @@ FROM registry.access.redhat.com/ubi8/ubi-minimal
 
 LABEL MAINTAINER "CodeReady Containers <devtools-cdk@redhat.com>"
 
-COPY --from=builder /workspace/bin/linux/monictl /usr/local/bin/
-COPY --from=builder /workspace/images/build/entrypoint.sh /usr/local/bin/
+COPY --from=builder /workspace/bin/linux/monictl /workspace/images/build/entrypoint.sh /usr/local/bin/
 
-RUN microdnf install -y openssh-clients
+ENV EPEL https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+RUN rpm -ivh ${EPEL} \ 
+    && microdnf --enablerepo=epel install -y openssh-clients sshpass \
+    && microdnf clean all
 
 ENTRYPOINT ["entrypoint.sh"]

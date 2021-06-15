@@ -9,6 +9,32 @@ The following diagram represent the interaction of monitools container with a ho
 
 ![Overview](docs/overview.jpg?raw=true)
 
+The container will be configured with ENVs:
+
+#### target host configuration   
+  
+**TARGET_HOST**(*mandatory*): Target host address   
+**TARGET_HOST_USERNAME**(*mandatory*): username  
+
+Chose one of following depending on the target auth mechanism:  
+
+**TARGET_HOST_KEY_PATH**(*optional*): key path  
+**TARGET_HOST_PASSWORD**(*optional*): pasword
+
+#### monictl configuration  
+  
+**MONICTL_REPETITIONS**(*optional, default 5*)  
+**MONICTL_INTERVAL**(*optional, default 1*)  
+
+Sample container execution
+```bash
+podman run -it --rm \
+        -e TARGET_HOST_USERNAME=XXXX \
+        -e TARGET_HOST_KEY_PATH=XXXX \
+        -e TARGET_HOST=XXXX \
+ quay.io/crc/monitools
+```
+
 ## Standalone tool
 
 ### Install
