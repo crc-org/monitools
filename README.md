@@ -1,5 +1,4 @@
-monitools
-==
+# monitools
 
 Gather resource consumption data around a CodeReady Containers instance
   
@@ -10,23 +9,20 @@ The following diagram represent the interaction of monitools container with a ho
 ![Overview](docs/overview.jpg?raw=true)
 
 The container will be configured with ENVs:
-
-#### target host configuration   
   
-**TARGET_HOST**(*mandatory*): Target host address   
+**TARGET_HOST**(*mandatory*): Target host address  
 **TARGET_HOST_USERNAME**(*mandatory*): username  
-
 Chose one of following depending on the target auth mechanism:  
-
 **TARGET_HOST_KEY_PATH**(*optional*): key path  
 **TARGET_HOST_PASSWORD**(*optional*): pasword
-
-#### monictl configuration  
-  
 **MONICTL_REPETITIONS**(*optional, default 5*)  
 **MONICTL_INTERVAL**(*optional, default 1*)  
+**MONITOOL_PERIOD**(*optional, in case we want to loop the monitool execution for a period of time. Period is a number (hours) If not set it will run only once*)  
+**MONITOOL_PERIOD**(*optional, in case we define MONITOOL_PERIOD. We can set the interval, default is 30m, interval is defined according linux sleep command time syntax*)  
+**RESULTS_PATH**(*optional, define the target path on the container to copy back results, default is /output*)
 
 Sample container execution
+
 ```bash
 podman run -it --rm \
         -e TARGET_HOST_USERNAME=XXXX \
@@ -50,11 +46,13 @@ make install
 1. Create directory where you want `monictl` to deposit the data. 
 2. Have a running instance of CRC (`crc status` returns `Running` for both VM and the cluster)
 3. Run
-   ```bash
+
+```bash
    monictl -d=<data dir> -n=<num of reps> -s=<length of pause>
-   ```
-4. Look into your data folder to inspect the files.
-   
+```
+
+4. Look into your data folder to inspect the files.  
+
 ### Flags/arguments
 
 - `-d`: data directory (relative to current directory)
@@ -95,12 +93,12 @@ Then use as any other package, e.g. by importing as:
 ``` bash
 import github.com/code-ready/monitools/tools
 ```
+
 ### Example
 
 In `monitools/examples` you will find a short program that imports this module and the `tools` package and runs one of its functions. It assumes an existing CRC VM and probes for CPU usage of the `qemu` process 5 times with 1s sleep inbetween probes. Resulting %CPU is recorded in `cpu.csv` in the same `monitools/examples` folder. Run the example script `example.go` by 
 
 ``` bash
-$ cd monitools/examples
-$ go run example.go
+cd monitools/examples
+go run example.go
 ```
-
