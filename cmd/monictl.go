@@ -37,6 +37,12 @@ func main() {
 	flag.IntVar(&numRepeats, "n", 5, "number of checks of CPU load")
 	var sleepLength int
 	flag.IntVar(&sleepLength, "s", 1, "sleep between repeats [in seconds]")
+	var repeatStarts bool
+	flag.BoolVar(&repeatStarts, "r", false, "repeatedly start and delete the cluster")
+	var pullSecretPath string
+	flag.StringVar(&pullSecretPath, "p", "", "path to pull secret file [needed if -r flag is set to true")
+	var bundlePath string
+	flag.StringVar(&bundlePath, "b", "", "path to CRC bundle [needed if -r flag is set to true")
 
 	flag.Parse()
 
@@ -46,7 +52,8 @@ func main() {
 		log.Fatalf("Unable to create directory: %s", dirPath)
 	}
 
-	if !tools.IsCRCRunning() {
+	// Require running cluster if not doing start/delete testing
+	if !repeatStarts && !tools.IsCRCRunning() {
 		fmt.Println("CRC VM is not running")
 		os.Exit(1)
 	}
@@ -56,7 +63,9 @@ func main() {
 	fmt.Println("Running monitoring tools with the following settings:")
 	fmt.Printf("Data directory: %s\n", dirPath)
 	fmt.Printf("Number of repeats: %d\n", numRepeats)
-	fmt.Printf("Pauses between repeats: %ds\n", sleepLength)
+	if !repeatStarts {
+		fmt.Printf("Pauses between repeats: %ds\n", sleepLength)
+	}
 	fmt.Printf("Logging into: %s\n", logFilePath)
 	fmt.Println("-------------")
 
@@ -64,54 +73,69 @@ func main() {
 	trafficChan := make(chan error)
 	crioChan := make(chan error)
 	nodeDesChan := make(chan error)
+	startChan := make(chan error)
 
 	// ================
 	// start collecting
 	// ================
 
-	// transmitted/received MiB on crc interface
-	trafficFile := filepath.Join(dirPath, "traffic.json")
-	go tools.RecordTraffic(trafficFile, numRepeats, sleepLength, trafficChan)
-	log.Println("going to record traffic going in/out of the VM")
+	if repeatStarts {
+		// start times for CRC cluster
+		startTimesFile := filepath.Join(dirPath, "startTimes.json")
+		go tools.RecordStartTimes(startTimesFile, numRepeats, startChan, pullSecretPath, bundlePath)
+		log.Println("going to record start times for CRC cluster")
+	} else {
+		// transmitted/received MiB on crc interface
+		trafficFile := filepath.Join(dirPath, "traffic.json")
+		go tools.RecordTraffic(trafficFile, numRepeats, sleepLength, trafficChan)
+		log.Println("going to record traffic going in/out of the VM")
 
-	// CPU usage by 'qemu' process
-	cpuFile := filepath.Join(dirPath, "cpu.json")
-	go tools.RecordHostCPUUsage(cpuFile, numRepeats, sleepLength, cpuChan)
-	log.Println("going to record CPU usage percentage attributed to qemu")
+		// CPU usage by 'qemu' process
+		cpuFile := filepath.Join(dirPath, "cpu.json")
+		go tools.RecordHostCPUUsage(cpuFile, numRepeats, sleepLength, cpuChan)
+		log.Println("going to record CPU usage percentage attributed to qemu")
 
-	// CRI-O stats as reported by 'crictl'
-	go tools.GetCRIStatsFromVM(dirPath, crioChan)
-	log.Println("going to retrieve crictl stats from the CRC VM")
+		// CRI-O stats as reported by 'crictl'
+		go tools.GetCRIStatsFromVM(dirPath, crioChan)
+		log.Println("going to retrieve crictl stats from the CRC VM")
 
-	// Node Description
-	nodeDescription := filepath.Join(dirPath, "node.json")
-	go tools.GetNodeResource(nodeDescription, nodeDesChan)
-
+		// Node Description
+		nodeDescription := filepath.Join(dirPath, "node.json")
+		go tools.GetNodeResource(nodeDescription, nodeDesChan)
+	}
 	// ================
 	// done collecting
 	// ================
 
-	if err := <-trafficChan; err != nil {
-		log.Fatalf("failed to record traffic flow %s", err)
+	if repeatStarts {
+		if err := <-startChan; err != nil {
+			log.Fatalf("failed to record start times: %s", err)
+		} else {
+			log.Printf("recorded start duration %d times", numRepeats)
+		}
 	} else {
-		log.Printf("recorded traffic (RX/TX) %d times at %d sec intervals", numRepeats, sleepLength)
-	}
+		if err := <-trafficChan; err != nil {
+			log.Fatalf("failed to record traffic flow %s", err)
+		} else {
+			log.Printf("recorded traffic (RX/TX) %d times at %d sec intervals", numRepeats, sleepLength)
+		}
 
-	if err := <-cpuChan; err != nil {
-		log.Fatalf("failed to record CPU percentage %s", err)
-	} else {
-		log.Printf("recorded CPU usage percentage %d times at %d sec intervals", numRepeats, sleepLength)
-	}
+		if err := <-cpuChan; err != nil {
+			log.Fatalf("failed to record CPU percentage %s", err)
+		} else {
+			log.Printf("recorded CPU usage percentage %d times at %d sec intervals", numRepeats, sleepLength)
+		}
 
-	if err := <-crioChan; err != nil {
-		log.Fatalf("could not retrieve crictl stats: %s", err)
-	} else {
-		log.Println("crictl stats successfully retrieved")
-	}
+		if err := <-crioChan; err != nil {
+			log.Fatalf("could not retrieve crictl stats: %s", err)
+		} else {
+			log.Println("crictl stats successfully retrieved")
+		}
 
-	if err := <-nodeDesChan; err != nil {
-		log.Fatalf("could not retrieve node description stats: %s", err)
-	} else {
-		log.Println("node description successfully retrieved")
+		if err := <-nodeDesChan; err != nil {
+			log.Fatalf("could not retrieve node description stats: %s", err)
+		} else {
+			log.Println("node description successfully retrieved")
+		}
 	}
 }

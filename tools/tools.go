@@ -258,3 +258,110 @@ func parseNodeDescribeToJSON(path string) error {
 
 	return nil
 }
+
+func timedClusterStart(pullSecretPath string, bundlePath string) (string, error) {
+
+	cmd := exec.Command("crc", "start", "-b", bundlePath, "-p", pullSecretPath)
+	s := time.Now()
+	out, err := cmd.Output()
+	log.Printf("%s", string(out))
+	startDuration := time.Since(s)
+	if err != nil {
+		return "0h0m0.0s", err
+	}
+
+	return startDuration.String(), nil
+}
+
+func clusterDelete() error {
+
+	cmd := exec.Command("crc", "delete", "-f")
+	err := cmd.Run()
+
+	return err
+}
+
+func clusterCleanup() error {
+	cmd := exec.Command("crc", "cleanup")
+	out, err := cmd.Output()
+	if err != nil {
+		log.Printf("%s", string(out))
+	}
+
+	return err
+}
+
+func clusterSetup(bundlePath string) error {
+	cmd := exec.Command("crc", "setup", "-b", bundlePath)
+	out, err := cmd.Output()
+	if err != nil {
+		log.Printf("%s", string(out))
+	}
+
+	return err
+}
+
+func recordStartTimes(filename string, reps int, pullSecretPath string, bundlePath string) error {
+
+	// crc cleanup
+	err := clusterCleanup()
+	if err != nil {
+		log.Printf("Could not clean up the host: %s", err)
+		return err
+	}
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		log.Printf("Could not retrieve user's home directory: %s", err)
+		return err
+	}
+	// remove config file
+	err = os.Remove(filepath.Join(homeDir, ".crc", "crc.json"))
+	if err != nil {
+		log.Printf("Could not remove crc config: %s", err)
+		return err
+	}
+	// crc setup
+	err = clusterSetup(bundlePath)
+	if err != nil {
+		log.Printf("Could not set up the host: %s", err)
+		return err
+	}
+
+	// collect data
+	var startTimes []string
+	for i := 0; i < reps; i++ {
+
+		startTime, _ := timedClusterStart(pullSecretPath, bundlePath)
+		startTimes = append(startTimes, startTime)
+
+		err1 := clusterDelete()
+		if err1 != nil {
+			log.Printf("Failed to delete cluster: %s", err1)
+			os.Exit(1)
+		}
+	}
+
+	// create CSV file and write data to it
+	f, err := os.Create(filename)
+	if err != nil {
+		log.Printf("could not create %s err: %s", filename, err)
+	}
+	defer f.Close()
+
+	jsonStartTimes, _ := json.MarshalIndent(startTimes, "", " ")
+	err = ioutil.WriteFile(filename, jsonStartTimes, 0644)
+	if err != nil {
+		log.Printf("Could not write data to %s", filename)
+	}
+
+	return nil
+}
+
+// RecordStartTimes returns a list of n cpu usage stats
+// (in %) taken with nap breaks in between each poll
+// filename : relative location of file to write into
+// reps     : number of times to record CPU usage
+// c        : channel used to report back to the main process
+func RecordStartTimes(filename string, reps int, c chan error, pullSecretPath string, bundlePath string) {
+	c <- recordStartTimes(filename, reps, pullSecretPath, bundlePath)
+}
